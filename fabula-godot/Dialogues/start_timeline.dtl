@@ -1,0 +1,5 @@
+Veska: [portrait=shock]!!!
+Veska: [portrait=simper]Muy buenas!
+Veska: [portrait=simper]No esperaba verte por aquí
+do Global.change_chara()
+Veska: [portrait=simper]Parece que podemos entrar...

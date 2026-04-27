@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bwxg2witka0l8"]
+
+[ext_resource type="Script" uid="uid://cq0b1vc5768p5" path="res://Scripts/player_TPS.gd" id="1_v0iea"]
+[ext_resource type="PackedScene" uid="uid://d04po7p4sxxko" path="res://Models/Veska/chara_anims.tscn" id="2_vgqql"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_vgqql"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_fkybt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vgqql"]
+albedo_color = Color(1, 0.3882353, 0.23137255, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hhfy0"]
+material = SubResource("StandardMaterial3D_vgqql")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ydcye"]
+
+[sub_resource type="Resource" id="Resource_vgqql"]
+script = ExtResource("4_fkybt")
+duration = 2.0
+transition = 1
+ease = 1
+metadata/_custom_type_script = "uid://8umksf8e80fw"
+
+[node name="Player" type="CharacterBody3D" unique_id=282341483]
+script = ExtResource("1_v0iea")
+accel = 0.5
+jump_velocity = 13.0
+
+[node name="chara_anims" parent="." unique_id=154309225 instance=ExtResource("2_vgqql")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1401114503]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_hhfy0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1219213332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_ydcye")
+
+[node name="CamOrigin" type="Node3D" parent="." unique_id=1038333964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6050392, 0.223048)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CamOrigin" unique_id=2082221803]
+spring_length = 3.0
+margin = 0.5
+
+[node name="PhantomCamera3D" type="Node3D" parent="CamOrigin/SpringArm3D" unique_id=1310668249]
+script = ExtResource("3_vgqql")
+priority = 1
+tween_resource = SubResource("Resource_vgqql")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"

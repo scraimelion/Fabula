@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://d04po7p4sxxko"]
+
+[ext_resource type="PackedScene" uid="uid://3gtgsk4lcane" path="res://Models/Veska/chara_anims.glb" id="1_apj2t"]
+[ext_resource type="Texture2D" uid="uid://di8vvytlgl4oh" path="res://Models/Veska/chara_anims_veska_clothes.png" id="2_v2cy1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gx3a3"]
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("2_v2cy1")
+
+[node name="chara_anims" unique_id=154309225 instance=ExtResource("1_apj2t")]
+
+[node name="Cylinder_003" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1199071404) index="0" unique_id=219902465]
+surface_material_override/0 = SubResource("StandardMaterial3D_gx3a3")
