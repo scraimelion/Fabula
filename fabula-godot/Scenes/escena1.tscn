@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://wp0tlq7ig5gl" path="res://Scripts/setup_postprocessing.gd" id="1_wa43r"]
 [ext_resource type="Shader" uid="uid://cdsv20ogcxdla" path="res://Shaders/dither.gdshader" id="4_v6bpe"]
 [ext_resource type="PackedScene" uid="uid://cmiskne3c4sda" path="res://Models/Pueblo/Ciudad.glb" id="4_vbn67"]
-[ext_resource type="Script" uid="uid://b1vxepynw3pi0" path="res://Scripts/archer_character_controller.gd" id="4_yashq"]
+[ext_resource type="Script" uid="uid://b1vxepynw3pi0" path="res://Scripts/player_Archer.gd" id="4_yashq"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_yeyix"]
 [ext_resource type="PackedScene" uid="uid://dq0daqv4fb86h" path="res://Scenes/cumulo.tscn" id="5_vbn67"]
 [ext_resource type="AudioStream" uid="uid://c5x1apficuwmi" path="res://Sound/wind_noise_loop.mp3" id="8_6f2m1"]
@@ -68,6 +68,30 @@ albedo_texture = ExtResource("18_g6aci")
 material = SubResource("StandardMaterial3D_6td6e")
 size = Vector2(1.625, 1.77)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_32kk3"]
+size = Vector3(5.482127, 1.0497861, 3.7646601)
+
+[sub_resource type="Resource" id="Resource_nxigh"]
+script = ExtResource("10_yeyix")
+
+[sub_resource type="Resource" id="Resource_7sqw5"]
+script = ExtResource("10_vd6vl")
+fov = 45.5
+metadata/_custom_type_script = "uid://b8hhnqsugykly"
+
+[sub_resource type="Resource" id="Resource_6td6e"]
+script = ExtResource("10_yeyix")
+transition = 1
+
+[sub_resource type="Resource" id="Resource_rydwg"]
+script = ExtResource("10_yeyix")
+transition = 1
+ease = 1
+
+[sub_resource type="Resource" id="Resource_vj062"]
+script = ExtResource("10_vd6vl")
+metadata/_custom_type_script = "uid://b8hhnqsugykly"
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_14rvp"]
 size = Vector2(400, 400)
 
@@ -88,9 +112,6 @@ albedo_color = Color(1, 0.3882353, 0.23137255, 1)
 material = SubResource("StandardMaterial3D_55ugo")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wa43r"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_32kk3"]
-size = Vector3(3.066, 1.0497861, 2.501)
 
 [node name="Main" type="Node3D" unique_id=94512067]
 script = ExtResource("1_6td6e")
@@ -128,68 +149,116 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 [node name="Ciudad" parent="Entorno" unique_id=759003428 instance=ExtResource("4_vbn67")]
 transform = Transform3D(0.8046555, 0, -0.593742, 0, 1, 0, 0.593742, 0, 0.8046555, 0, 0, 0)
 
-[node name="Villager3" type="MeshInstance3D" parent="Entorno/Ciudad" unique_id=987712555]
-transform = Transform3D(0.8730413, -0.48764634, -3.8161847e-08, -4.371139e-08, 1.9106855e-15, -1, 0.48764634, 0.8730413, -2.1315698e-08, -66.184975, 2.7167287, -0.67166543)
+[node name="Ciudadanos" type="Node3D" parent="Entorno/Ciudad" unique_id=2068838717]
+
+[node name="Villager3" type="MeshInstance3D" parent="Entorno/Ciudad/Ciudadanos" unique_id=987712555]
+transform = Transform3D(0.8730414, -0.48764634, -3.8161843e-08, -4.371139e-08, 1.9106855e-15, -1, 0.48764634, 0.8730414, -2.1315698e-08, -66.184975, 2.7167287, -0.6716633)
 mesh = SubResource("PlaneMesh_nxigh")
 
-[node name="Villager4" type="MeshInstance3D" parent="Entorno/Ciudad" unique_id=380192317]
-transform = Transform3D(0.7865256, 0.61755764, -3.4380122e-08, -4.371139e-08, 1.9106855e-15, -1, -0.61755764, 0.7865256, 2.6994298e-08, -63.938587, 3.003736, -5.7875013)
+[node name="Villager4" type="MeshInstance3D" parent="Entorno/Ciudad/Ciudadanos" unique_id=380192317]
+transform = Transform3D(0.7865257, 0.6175577, -3.4380122e-08, -4.371139e-08, 1.9106855e-15, -1, -0.6175577, 0.7865257, 2.6994298e-08, -63.93859, 3.003736, -5.7875004)
 mesh = SubResource("PlaneMesh_nxigh")
 
-[node name="Villager5" type="MeshInstance3D" parent="Entorno/Ciudad" unique_id=201203115]
-transform = Transform3D(0.9793678, -0.20208648, -4.2809518e-08, -4.371139e-08, 1.9106855e-15, -1, 0.20208648, 0.9793678, -8.83348e-09, -56.405186, 2.0217915, 31.95456)
+[node name="Villager5" type="MeshInstance3D" parent="Entorno/Ciudad/Ciudadanos" unique_id=201203115]
+transform = Transform3D(0.97936785, -0.20208654, -4.2809518e-08, -4.371139e-08, 1.9106855e-15, -1, 0.20208654, 0.97936785, -8.8334815e-09, -56.405186, 2.0217915, 31.95456)
 mesh = SubResource("PlaneMesh_nxigh")
 
-[node name="Villager6" type="MeshInstance3D" parent="Entorno/Ciudad" unique_id=2099424160]
-transform = Transform3D(0.70194197, 0.71223456, -3.0682845e-08, -4.371139e-08, 1.9106855e-15, -1, -0.71223456, 0.70194197, 3.1132757e-08, -58.284817, 2.0217915, 32.544724)
+[node name="Villager6" type="MeshInstance3D" parent="Entorno/Ciudad/Ciudadanos" unique_id=2099424160]
+transform = Transform3D(0.701942, 0.7122346, -3.068285e-08, -4.371139e-08, 1.9106855e-15, -1, -0.7122346, 0.701942, 3.113276e-08, -58.284817, 2.0217915, 32.544724)
 mesh = SubResource("PlaneMesh_nxigh")
 
-[node name="Villager7" type="MeshInstance3D" parent="Entorno/Ciudad" unique_id=540803554]
-transform = Transform3D(0.996414, 0.08461696, -4.355462e-08, -4.371139e-08, -3.1134792e-15, -1, -0.08461696, 0.996414, 3.6987302e-09, -59.895958, 2.0217915, 30.391546)
+[node name="Villager7" type="MeshInstance3D" parent="Entorno/Ciudad/Ciudadanos" unique_id=540803554]
+transform = Transform3D(0.99641407, 0.08461696, -4.355462e-08, -4.371139e-08, -3.1134792e-15, -1, -0.08461696, 0.99641407, 3.698732e-09, -59.895958, 2.0217915, 30.391546)
 mesh = SubResource("PlaneMesh_nxigh")
 
-[node name="Villager8" type="MeshInstance3D" parent="Entorno/Ciudad" unique_id=702425606]
-transform = Transform3D(0.8814275, 0.47232023, -3.85284e-08, -4.371139e-08, -2.8922308e-15, -1, -0.47232023, 0.8814275, 2.0645773e-08, -58.64079, 2.0217915, 29.465382)
+[node name="Villager8" type="MeshInstance3D" parent="Entorno/Ciudad/Ciudadanos" unique_id=702425606]
+transform = Transform3D(0.8814275, 0.4723202, -3.85284e-08, -4.371139e-08, -2.8922308e-15, -1, -0.4723202, 0.8814275, 2.0645773e-08, -58.64079, 2.0217915, 29.465382)
 mesh = SubResource("PlaneMesh_nxigh")
 
-[node name="Villager9" type="MeshInstance3D" parent="Entorno/Ciudad" unique_id=609234211]
-transform = Transform3D(0.8814275, 0.4723202, -3.85284e-08, -4.371139e-08, -2.8922308e-15, -1, -0.4723202, 0.8814275, 2.0645773e-08, -54.555546, 2.0217915, 29.798977)
+[node name="Villager9" type="MeshInstance3D" parent="Entorno/Ciudad/Ciudadanos" unique_id=609234211]
+transform = Transform3D(0.8814276, 0.47232017, -3.85284e-08, -4.371139e-08, -2.8922308e-15, -1, -0.47232017, 0.8814276, 2.0645773e-08, -54.555546, 2.0217915, 29.798977)
 mesh = SubResource("PlaneMesh_nxigh")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Entorno/Ciudad" unique_id=253030102]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.105103, 5.727874, -23.414751)
+[node name="Luces" type="Node3D" parent="Entorno/Ciudad" unique_id=1070647283]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Entorno/Ciudad/Luces" unique_id=253030102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.105106, 5.727874, -23.414753)
 light_size = 20.0
 omni_range = 8.675
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="Entorno/Ciudad" unique_id=1929369014]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.488846, 6.252527, 31.325535)
+[node name="OmniLight3D4" type="OmniLight3D" parent="Entorno/Ciudad/Luces" unique_id=1929369014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.48885, 6.252527, 31.325539)
 light_size = 20.0
 omni_range = 8.675
 
-[node name="OmniLight3D6" type="OmniLight3D" parent="Entorno/Ciudad" unique_id=1491894403]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.54585, 3.8496752, 24.576809)
+[node name="OmniLight3D6" type="OmniLight3D" parent="Entorno/Ciudad/Luces" unique_id=1491894403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.545853, 3.8496752, 24.576809)
 light_size = 20.0
 omni_range = 8.675
 
-[node name="OmniLight3D7" type="OmniLight3D" parent="Entorno/Ciudad" unique_id=714345658]
+[node name="OmniLight3D7" type="OmniLight3D" parent="Entorno/Ciudad/Luces" unique_id=714345658]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.095512, 3.8496752, 15.198137)
 light_size = 20.0
 omni_range = 8.675
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="Entorno/Ciudad" unique_id=676795228]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.48957, 6.2525263, 31.381866)
+[node name="OmniLight3D5" type="OmniLight3D" parent="Entorno/Ciudad/Luces" unique_id=676795228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.48958, 6.2525263, 31.381868)
 light_size = 20.0
 omni_range = 8.675
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Entorno/Ciudad" unique_id=317642611]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.154774, 5.7278748, -9.429124)
+[node name="OmniLight3D2" type="OmniLight3D" parent="Entorno/Ciudad/Luces" unique_id=317642611]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.154778, 5.7278748, -9.429125)
 light_size = 20.0
 omni_range = 8.675
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="Entorno/Ciudad" unique_id=1066559071]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.66108, 5.7278748, -1.6475945)
+[node name="OmniLight3D3" type="OmniLight3D" parent="Entorno/Ciudad/Luces" unique_id=1066559071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.66108, 5.7278748, -1.6475925)
 light_size = 20.0
 omni_range = 8.675
+
+[node name="AreasCiudad" type="Node3D" parent="Entorno/Ciudad" unique_id=218254258]
+
+[node name="TownSquare" type="Area3D" parent="Entorno/Ciudad/AreasCiudad" unique_id=1366194777]
+transform = Transform3D(0.95903295, 0, 0.28329584, 0, 1, 0, -0.28329584, 0, 0.95903295, -56.848183, 2.5479374, 31.882387)
+script = ExtResource("17_32kk3")
+timeline = "TownSquareTimeline"
+can_reenter = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Entorno/Ciudad/AreasCiudad/TownSquare" unique_id=67338135]
+transform = Transform3D(1.000004, 0, 2.9802322e-07, 0, 1, 0, -2.9802322e-07, 0, 1.000004, -0.13326263, -0.838107, -0.63182926)
+shape = SubResource("BoxShape3D_32kk3")
+
+[node name="CastilloClero" type="Area3D" parent="Entorno/Ciudad/AreasCiudad" unique_id=2091902620]
+transform = Transform3D(0.17089742, 0, 0.9852892, 0, 1, 0, -0.9852892, 0, 0.17089742, -28.825737, 35.964256, 1.394599)
+script = ExtResource("17_32kk3")
+timeline = "castillo_clero_TL"
+can_reenter = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Entorno/Ciudad/AreasCiudad/CastilloClero" unique_id=214367196]
+transform = Transform3D(1.000004, 0, 2.9802322e-07, 0, 1, 0, -2.9802322e-07, 0, 1.000004, -0.13326263, -0.838107, -0.63182926)
+shape = SubResource("BoxShape3D_32kk3")
+
+[node name="CamsCiudad" type="Node3D" parent="Entorno/Ciudad" unique_id=717821033]
+
+[node name="VeskaOut" type="Node3D" parent="Entorno/Ciudad/CamsCiudad" unique_id=465787710]
+transform = Transform3D(-0.582123, 0.2966816, -0.7570424, 0, 0.9310558, 0.36487687, 0.813101, 0.21240312, -0.54198897, -95.211, 2.882, -73.788)
+script = ExtResource("9_stbg5")
+tween_resource = SubResource("Resource_nxigh")
+camera_3d_resource = SubResource("Resource_7sqw5")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="TownSquare" type="Node3D" parent="Entorno/Ciudad/CamsCiudad" unique_id=38142791]
+transform = Transform3D(-0.9920186, 0, -0.12609506, 0, 1, 0, 0.12609506, 0, -0.9920186, -56.764687, 8.348783, 25.108204)
+script = ExtResource("9_stbg5")
+tween_resource = SubResource("Resource_6td6e")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="CastilloClero" type="Node3D" parent="Entorno/Ciudad/CamsCiudad" unique_id=592253867]
+transform = Transform3D(-0.39874905, -0.43758327, -0.8059282, 0, 0.8788171, -0.47715884, 0.9170601, -0.19026661, -0.3504275, -45.742, 36.02, -17.455)
+script = ExtResource("9_stbg5")
+tween_resource = SubResource("Resource_rydwg")
+camera_3d_resource = SubResource("Resource_vj062")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="Cumulo" parent="Entorno" unique_id=1319617997 instance=ExtResource("5_vbn67")]
 
@@ -299,11 +368,13 @@ visible = false
 texture = ExtResource("11_62dkq")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=719519428]
-transform = Transform3D(0.94576263, 0, 0.32485846, 0, 1, 0, -0.32485846, 0, 0.94576263, -32.006897, 1.5601187, -113.50546)
+transform = Transform3D(0.94576263, 0, 0.32485846, 0, 1, 0, -0.32485846, 0, 0.94576263, -31.894733, 1.6111772, -114.982765)
 script = ExtResource("17_32kk3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1540554418]
 transform = Transform3D(1.000004, 0, 2.9802322e-07, 0, 1, 0, -2.9802322e-07, 0, 1.000004, 0, -0.838107, 0)
 shape = SubResource("BoxShape3D_32kk3")
 
+[connection signal="body_entered" from="Entorno/Ciudad/AreasCiudad/TownSquare" to="Entorno/Ciudad/AreasCiudad/TownSquare" method="_on_body_entered"]
+[connection signal="body_entered" from="Entorno/Ciudad/AreasCiudad/CastilloClero" to="Entorno/Ciudad/AreasCiudad/CastilloClero" method="_on_body_entered"]
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

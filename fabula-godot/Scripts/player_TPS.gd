@@ -23,11 +23,10 @@ var min_direction: Vector3
 func _ready() -> void:
 	set_floor_max_angle(deg_to_rad(max_slope_angle))
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	animation_player.play("Idle")
 	
 # Revisar para controlador / para 
 func _input(event: InputEvent) -> void:
-	if Global.is_archer:
+	if Global.is_archer or not Global.can_move:
 		return
 	return
 	if event is InputEventMouseMotion:
@@ -45,7 +44,8 @@ func _input(event: InputEvent) -> void:
 		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(max_deg_up), deg_to_rad(max_deg_down))
 
 func _physics_process(delta: float) -> void:
-	if Global.is_archer:
+	if Global.is_archer or not Global.can_move:
+		animation_player.play("Idle")
 		return
 		
 	#Process mouse

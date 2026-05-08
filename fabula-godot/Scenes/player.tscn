@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d04po7p4sxxko" path="res://Models/Veska/chara_anims.tscn" id="2_vgqql"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_vgqql"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_fkybt"]
+[ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_fkybt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vgqql"]
 albedo_color = Color(1, 0.3882353, 0.23137255, 1)
@@ -19,6 +20,10 @@ duration = 2.0
 transition = 1
 ease = 1
 metadata/_custom_type_script = "uid://8umksf8e80fw"
+
+[sub_resource type="Resource" id="Resource_x3wgy"]
+script = ExtResource("5_fkybt")
+metadata/_custom_type_script = "uid://b8hhnqsugykly"
 
 [node name="Player" type="CharacterBody3D" unique_id=282341483]
 script = ExtResource("1_v0iea")
@@ -47,4 +52,5 @@ margin = 0.5
 script = ExtResource("3_vgqql")
 priority = 1
 tween_resource = SubResource("Resource_vgqql")
+camera_3d_resource = SubResource("Resource_x3wgy")
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"

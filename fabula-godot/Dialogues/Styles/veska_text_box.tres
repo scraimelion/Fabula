@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxug158exe3g" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_i66w1"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_s6nvf"]
-[ext_resource type="PackedScene" path="res://Dialogues/Styles/TextboxWithPortrait/custom_textbox_with_portrait_.tscn" id="4_ia186"]
+[ext_resource type="PackedScene" uid="uid://c24a6n3450cbt" path="res://Dialogues/Styles/TextboxWithPortrait/custom_textbox_with_portrait_.tscn" id="4_ia186"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_pu7qn"]
 [ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="6_m0ncb"]
 [ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="7_rygov"]

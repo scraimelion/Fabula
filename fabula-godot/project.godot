@@ -32,11 +32,13 @@ settings/addon_root_folder="res://addons/debug_draw_3d"
 [dialogic]
 
 directories/dch_directory={
-"Resources/unit_test_character": "res://Tests/Resources/unit_test_character.dch",
-"Veska": "res://Dialogues/Characters/Veska.dch"
+"Veska": "res://Dialogues/Characters/Veska.dch",
+"unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
-"start_timeline": "res://Dialogues/start_timeline.dtl"
+"TownSquareTimeline": "res://Dialogues/Timelines/TownSquareTimeline.dtl",
+"castillo_clero_TL": "res://Dialogues/Timelines/castillo_clero_TL.dtl",
+"start_timeline": "res://Dialogues/Timelines/start_timeline.dtl"
 }
 layout/style_directory={}
 extensions_folder="res://addons/dialogic_additions"

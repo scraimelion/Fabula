@@ -3,13 +3,19 @@ extends Node3D
 
 @onready var archer = $FPSArcher
 @onready var archer_cam = $FPSArcher/PhantomCamera3D
+@onready var cam_list_parent = $Entorno/Ciudad/CamsCiudad
 
-# Called when the node enters the scene tree for the first time.
+var cam_list : Array
+
+
 func _ready() -> void:
-	pass # Replace with function body.
+	# Establecemos prioridades de todas las cámaras
+	# Empezamos en cámara 0
+	cam_list = cam_list_parent.get_children()
+	for cam in cam_list:
+		cam.set_priority(0)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	# DEBUG DRAW
 	if Engine.is_editor_hint():
@@ -17,4 +23,7 @@ func _process(_delta: float) -> void:
 			Vector3(archer_cam.global_position - archer.global_position).length())
 
 	if not Engine.is_editor_hint():
-		pass
+		if Global.in_static_cam:
+			cam_list[Global.current_static_cam].set_priority(20)
+		else:
+			cam_list[Global.current_static_cam].set_priority(0)

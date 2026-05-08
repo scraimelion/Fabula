@@ -1,6 +1,9 @@
 extends Area3D
 
 @export var timeline = "start_timeline"
+@export var can_reenter = false
+
+var entered = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,5 +11,6 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	Global.stop_movement()
-	Dialogic.start(timeline)
+	if not entered or can_reenter:
+		Dialogic.start(timeline)
+		entered = true

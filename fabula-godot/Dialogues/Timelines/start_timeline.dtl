@@ -1,5 +1,8 @@
+do Global.stop_movement()
+do Global.change_chara()
 Veska: [portrait=shock]!!!
 Veska: [portrait=simper]Muy buenas!
 Veska: [portrait=simper]No esperaba verte por aquí
-do Global.change_chara()
+Veska: [portrait=simper]Es verdaderamente curioso esto
+do Global.start_movement()
 Veska: [portrait=simper]Parece que podemos entrar...

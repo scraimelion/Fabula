@@ -58,25 +58,18 @@ func _ready() -> void:
 	draw_sound = load("res://Sound/Bow/draw_shortest.mp3")
 
 func _process(_delta: float) -> void:
-	
-
 	walk_sound.stream_paused = true
 
 	if not Global.game_start:
 		return
 				
-	if not Global.is_archer:
+	if not Global.is_archer or not Global.can_move:
 		can_move = false
 		Camera.priority = 0
 	else:
 		can_move = true
 		Camera.priority = 1
 	
-	if not Global.can_move:
-		can_move = false
-	else:
-		can_move = true
-
 	var pressed_left := Input.is_action_pressed(input_left)
 	var pressed_right := Input.is_action_pressed(input_right)
 
