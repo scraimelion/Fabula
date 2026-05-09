@@ -104,7 +104,8 @@ mouse_filter = 2
 [node name="DialogicNode_NameLabel" type="Label" parent="Anchor/Panel/HBox/VBoxContainer" unique_id=1474578635]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/outline_size = 8
+theme_override_colors/font_outline_color = Color(0.30980393, 0.011764706, 0.011764706, 1)
+theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 8
 text = "Name"
 script = ExtResource("2_y0h34")
@@ -113,6 +114,7 @@ script = ExtResource("2_y0h34")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0.30980393, 0.011764706, 0.011764706, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true

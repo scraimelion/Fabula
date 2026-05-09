@@ -38,6 +38,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "TownSquareTimeline": "res://Dialogues/Timelines/TownSquareTimeline.dtl",
 "castillo_clero_TL": "res://Dialogues/Timelines/castillo_clero_TL.dtl",
+"default_timeline": "res://Dialogues/Timelines/default_timeline.dtl",
 "start_timeline": "res://Dialogues/Timelines/start_timeline.dtl"
 }
 layout/style_directory={}
