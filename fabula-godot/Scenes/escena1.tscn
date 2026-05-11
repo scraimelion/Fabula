@@ -135,7 +135,6 @@ script = ExtResource("1_wa43r")
 
 [node name="PostProcessing" type="MeshInstance3D" parent="Camera3D" unique_id=804707288]
 transform = Transform3D(1, -1.8626451e-09, 0, 0, 1, -6.0535967e-09, 0, 1.8626451e-09, 1, -2.0327568, 0.59023094, -8.350441)
-visible = false
 custom_aabb = AABB(0, 0, 0, 100000, 100000, 100000)
 mesh = SubResource("QuadMesh_m06ph")
 
@@ -147,7 +146,7 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="Entorno" type="Node3D" parent="." unique_id=1462172267]
 
-[node name="Ciudad" parent="Entorno" unique_id=128558844 instance=ExtResource("4_vbn67")]
+[node name="Ciudad" parent="Entorno" unique_id=1500981179 instance=ExtResource("4_vbn67")]
 transform = Transform3D(0.8046555, 0, -0.593742, 0, 1, 0, 0.593742, 0, 0.8046555, 0, 0, 0)
 
 [node name="Ciudadanos" type="Node3D" parent="Entorno/Ciudad" unique_id=2068838717]
@@ -452,7 +451,6 @@ mesh = SubResource("PlaneMesh_nxigh")
 [node name="Player" parent="." unique_id=282341483 instance=ExtResource("12_14rvp")]
 transform = Transform3D(-0.94425, 0, -0.32922918, 0, 1, 0, 0.32922918, 0, -0.94425, -31.16061, 0, -111.52642)
 accel = 0.6
-max_slope_angle = 60
 
 [node name="Ethel" type="Sprite3D" parent="." unique_id=1182519366]
 transform = Transform3D(0.19444785, 0, 0.18004175, 0, 0.265, 0, -0.18004175, 0, 0.19444785, -52.633507, 1.4152167, -103.02814)
