@@ -22,9 +22,11 @@ func _process(delta: float) -> void:
 		velocidad += aceleracion
 		if position.y > max_caida * -1:
 			position.y -= velocidad;
-		else: 
+		elif Global.initial_stage: 
 			Global.game_over = true
-			pass
+		else:
+			Dialogic.start_timeline("final_stage_TL")
+			impactada = false
 
 
 func _on_area_3d_cloud_hit() -> void:

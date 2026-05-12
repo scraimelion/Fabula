@@ -1,5 +1,4 @@
 do Global.stop_movement()
 do Global.cam_switch_to_static(2)
-Veska: [portrait=simper]adsdsadasdasdasdasdasdsadsadasdsadasdsa
-do Global.cam_switch_to_chara(1)
-do Global.start_movement()
+Veska: [portrait=serious]Parece que no nos dejan entrar...
+do Dialogic.start_timeline("check_transition_TL")

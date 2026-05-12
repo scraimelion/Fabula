@@ -5,6 +5,8 @@ extends Node3D
 @onready var archer_cam = $FPSArcher/PhantomCamera3D
 @onready var cam_list_parent = $Entorno/Ciudad/CamsCiudad
 
+@export var max_conv : int = 4
+
 var cam_list : Array
 
 
@@ -26,4 +28,7 @@ func _process(_delta: float) -> void:
 		if Global.in_static_cam:
 			cam_list[Global.current_static_cam].set_priority(20)
 		else:
-			cam_list[Global.current_static_cam].set_priority(0)
+			for cam in cam_list:
+				cam.set_priority(0)
+		
+			

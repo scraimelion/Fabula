@@ -1,0 +1,6 @@
+if {critical_path} >= {max_conver}:
+	do Dialogic.start_timeline("supino_rito_TL")
+	[end_timeline]
+else:
+	do Global.cam_switch_to_chara(1)
+	do Global.start_movement()

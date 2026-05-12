@@ -10,5 +10,30 @@ albedo_texture = ExtResource("2_v2cy1")
 
 [node name="chara_anims" unique_id=154309225 instance=ExtResource("1_apj2t")]
 
-[node name="Cylinder_003" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1199071404) index="0" unique_id=219902465]
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(2031924613) index="0" unique_id=1199071404]
+bones/0/position = Vector3(4.9208637e-09, -0.93180645, -0.08996778)
+bones/0/rotation = Quaternion(0.04337134, 1.149516e-07, 3.1575105e-08, 0.999059)
+bones/1/rotation = Quaternion(-0.0066187554, -0.018313214, -0.029721303, 0.9993686)
+bones/1/scale = Vector3(1, 0.99999994, 1.0000001)
+bones/3/rotation = Quaternion(-0.0043018004, -5.4855686e-08, 0.0052117137, 0.9999772)
+bones/4/rotation = Quaternion(-0.081932835, 0.12765166, -0.55277646, 0.8194085)
+bones/5/rotation = Quaternion(-0.0678668, 0.23070924, -0.19898273, 0.9500386)
+bones/6/rotation = Quaternion(0.38178676, -0.04710408, 0.012807548, 0.92296046)
+bones/7/rotation = Quaternion(-0.02763414, -0.31051993, -0.06787956, 0.94773734)
+bones/8/rotation = Quaternion(-0.0046021603, 0.01604718, -0.6438635, 0.7649583)
+bones/9/rotation = Quaternion(-0.009781656, -0.0107069565, 0.6079397, 0.79385084)
+bones/10/rotation = Quaternion(-0.02883027, -0.04333338, 0.10452821, 0.99315906)
+bones/11/rotation = Quaternion(0.2269859, 0.033921655, 0.07841024, 0.9701436)
+bones/12/rotation = Quaternion(-2.4465972e-08, -1.5152445e-07, -0.06311203, 0.99800646)
+bones/13/rotation = Quaternion(-0.015425084, 0.20365989, 0.6745582, 0.7094053)
+bones/14/rotation = Quaternion(-0.48833773, -0.51139635, -0.4883378, 0.51139635)
+bones/15/rotation = Quaternion(-0.55426085, -0.3464112, -0.24060684, 0.7175672)
+bones/16/rotation = Quaternion(-0.026128178, 0.01835926, 0.31290802, 0.94924647)
+bones/17/rotation = Quaternion(-0.018497905, -0.0016487117, -0.5325221, 0.84621245)
+bones/18/rotation = Quaternion(-0.48833787, 0.5113962, 0.48833776, 0.5113964)
+bones/19/rotation = Quaternion(-0.5981921, 0.27345797, 0.24819693, 0.7111859)
+bones/20/rotation = Quaternion(-0.06558672, -0.03420837, -0.29873252, 0.9514657)
+bones/21/rotation = Quaternion(0.07810694, 0.087076895, 0.628446, 0.76900756)
+
+[node name="Cylinder_003" parent="Armature/Skeleton3D" index="0" unique_id=219902465]
 surface_material_override/0 = SubResource("StandardMaterial3D_gx3a3")

@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var pivot = $CamOrigin
 @onready var character_model = $chara_anims
 @onready var animation_player = $chara_anims/AnimationPlayer
+@onready var camera = $CamOrigin/SpringArm3D/PhantomCamera3D
 
 @export var accel = 1.0
 @export var max_speed = 8.0
@@ -45,9 +46,13 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	if Global.is_archer or not Global.can_move:
+		if Global.is_archer:
+			camera.set_priority(0)
+		else:
+			camera.set_priority(1)
 		animation_player.play("Idle")
 		return
-		
+	
 	#Process mouse
 	var input_rotation_x = deg_to_rad(-Global.mouse_relative.x * sensibility)
 	if not running:

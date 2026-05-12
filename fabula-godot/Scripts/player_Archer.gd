@@ -56,6 +56,7 @@ func _ready() -> void:
 	shot_ready_sound_played = false
 	ding_sound = load("res://Sound/Bow/ready.mp3")
 	draw_sound = load("res://Sound/Bow/draw_shortest.mp3")
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 
 func _process(_delta: float) -> void:
 	walk_sound.stream_paused = true
@@ -64,12 +65,17 @@ func _process(_delta: float) -> void:
 		return
 				
 	if not Global.is_archer or not Global.can_move:
-		can_move = false
-		Camera.priority = 0
-	else:
-		can_move = true
-		Camera.priority = 1
+		if not Global.is_archer: #esto es una condición de mierda y lo sabes
+			Camera.set_priority(0)
+		else:
+			Camera.set_priority(1)
+		return;
 	
+	handle_movement()
+	handle_shooting()
+
+
+func handle_movement():
 	var pressed_left := Input.is_action_pressed(input_left)
 	var pressed_right := Input.is_action_pressed(input_right)
 
@@ -94,7 +100,34 @@ func _process(_delta: float) -> void:
 
 	transform.basis = Basis()
 	rotate_y(look_rotation)
+	return
 
+
+func accelerate():
+	if abs(current_speed) < max_speed / 1000:
+		current_speed += rotate_accel / 1000
+	else:
+		current_speed = max_speed / 1000
+
+
+func decelerate():
+	if current_speed > 0 and current_speed > rotate_accel / 1000:
+		current_speed -= rotate_accel / 1000
+	elif current_speed < rotate_accel / 1000:
+		current_speed += rotate_accel / 1000
+	else:
+		current_speed = 0
+
+
+func check_input_mappings():
+	if can_move and not InputMap.has_action(input_left):
+		push_error("Movement disabled. No InputAction found for input_left: " + input_left)
+		can_move = false
+	if can_move and not InputMap.has_action(input_right):
+		push_error("Movement disabled. No InputAction found for input_right: " + input_right)
+		can_move = false
+
+func handle_shooting ():
 	#SHOOTING
 	if shooting:
 		if current_fov > min_fov:
@@ -123,34 +156,6 @@ func _process(_delta: float) -> void:
 		shoot = false
 		shot_ready = false
 		shot_ready_sound_played = false
-	
-
-
-
-func accelerate():
-	if abs(current_speed) < max_speed / 1000:
-		current_speed += rotate_accel / 1000
-	else:
-		current_speed = max_speed / 1000
-
-
-func decelerate():
-	if current_speed > 0 and current_speed > rotate_accel / 1000:
-		current_speed -= rotate_accel / 1000
-	elif current_speed < rotate_accel / 1000:
-		current_speed += rotate_accel / 1000
-	else:
-		current_speed = 0
-
-
-func check_input_mappings():
-	if can_move and not InputMap.has_action(input_left):
-		push_error("Movement disabled. No InputAction found for input_left: " + input_left)
-		can_move = false
-	if can_move and not InputMap.has_action(input_right):
-		push_error("Movement disabled. No InputAction found for input_right: " + input_right)
-		can_move = false
-	   
 
 func _input(event: InputEvent) -> void:
 	if not Global.is_archer:
@@ -162,9 +167,19 @@ func _input(event: InputEvent) -> void:
 		shooting = true
 
 	if event.is_action_released(input_shoot):
-		arco_sound.playing = false      
+		arco_sound.playing = false
 		if current_fov > min_fov:
 			shooting = false
 		else:
 			shooting = false # quitar al implementar el disparo
 			shoot = true
+
+func _on_dialogic_signal(arg: String):
+	match arg:
+		"Archer_reset_pos":
+			rotation.y = 0.0
+			look_rotation = 0.0
+			pass
+		"Archer_final_stage":
+			pass
+	return

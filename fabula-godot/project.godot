@@ -38,8 +38,11 @@ directories/dch_directory={
 directories/dtl_directory={
 "TownSquareTimeline": "res://Dialogues/Timelines/TownSquareTimeline.dtl",
 "castillo_clero_TL": "res://Dialogues/Timelines/castillo_clero_TL.dtl",
+"check_transition_TL": "res://Dialogues/Timelines/check_transition_TL.dtl",
 "default_timeline": "res://Dialogues/Timelines/default_timeline.dtl",
-"start_timeline": "res://Dialogues/Timelines/start_timeline.dtl"
+"final_stage_TL": "res://Dialogues/Timelines/final_stage_TL.dtl",
+"start_timeline": "res://Dialogues/Timelines/start_timeline.dtl",
+"supino_rito_TL": "res://Dialogues/Timelines/supino_rito_TL.dtl"
 }
 layout/style_directory={}
 extensions_folder="res://addons/dialogic_additions"
@@ -65,6 +68,10 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+variables={
+"critical_path": 0,
+"max_conver": 1
+}
 
 [display]
 

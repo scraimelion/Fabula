@@ -2,6 +2,7 @@ extends Area3D
 
 @export var timeline = "default_timeline"
 @export var can_reenter = false
+@export var is_critical_path = false
 
 var entered = false
 
@@ -11,6 +12,9 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
+	if not entered and is_critical_path:
+		Dialogic.VAR.critical_path += 1
+	
 	if not entered or can_reenter:
 		Dialogic.start(timeline)
 		

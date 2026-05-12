@@ -1,0 +1,12 @@
+do Global.cam_switch_to_static(3)
+Veska: [portrait=simper]Veamos si este experimento loco funciona!
+Veska: [portrait=invested]Parece ser que sí, menos mal
+Veska: [portrait=invested]Pero veamos que hace el maestro
+do Global.cam_switch_to_static(4)
+Veska: [portrait=invested]Aja Aja, todo en orden
+Veska: [portrait=invested]Volvemos al principio!
+[signal arg="Archer_reset_pos"]
+do Global.change_chara()
+do Global.cam_switch_to_chara(0)
+Veska: [portrait=simper]No te preocupes, no pasará lo mismo-
+do Global.start_movement()

@@ -1,0 +1,8 @@
+[signal arg="Archer_final_stage"]
+Veska: [portrait=simper]Y con esto llegamos a la fase final!
+Veska: [portrait=invested]Aunque de final tiene poco.
+Veska: [portrait=simper]Todo esto tiene que quedar bien resuelto, bien acabado.
+Veska: [portrait=simper]Queda mucho por explicar en esta fase....
+Veska: [portrait=invested]Mucha historia, mucho texto que te queda hacer!!
+Veska: [portrait=simper]Vayamos a ello.
+do Global.game_is_over()
