@@ -12,6 +12,9 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
+	if not body.is_in_group("player"):
+		return
+		
 	if not entered and is_critical_path:
 		Dialogic.VAR.critical_path += 1
 	

@@ -5,6 +5,7 @@ var flecha = load("res://Models/flecha_petrificadora.tscn")
 var instance
 
 @onready var Camera = $PhantomCamera3D
+@onready var final_camera = $PhantomCamera3D/PhantomCamera3D
 @onready var Arco = $PhantomCamera3D/RayCast3D
 @onready var arco_sound = $PhantomCamera3D/RayCast3D/AudioStreamPlayer3D
 @onready var walk_sound = $PhantomCamera3D/AudioStreamPlayer3D
@@ -27,8 +28,9 @@ var instance
 @export_group("Shoot settings")
 @export var min_fov : float = 60.0
 
+
 var current_speed : float
-var current_dir : float
+var current_dir : float = 0
 var look_rotation : float
 var progress : float
 var current_height : float
@@ -40,6 +42,7 @@ var shot_ready_sound_played : bool
 var shoot : bool
 var ding_sound
 var draw_sound
+var final_stage = false;
 
 # @onready var head: Node3D = $RotatePoint
 
@@ -58,7 +61,7 @@ func _ready() -> void:
 	draw_sound = load("res://Sound/Bow/draw_shortest.mp3")
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	walk_sound.stream_paused = true
 
 	if not Global.game_start:
@@ -71,29 +74,37 @@ func _process(_delta: float) -> void:
 			Camera.set_priority(1)
 		return;
 	
-	handle_movement()
+	
+	handle_movement(delta)
+	
+	if final_stage:
+		return
+		
 	handle_shooting()
 
 
-func handle_movement():
+func handle_movement(delta : float):
 	var pressed_left := Input.is_action_pressed(input_left)
 	var pressed_right := Input.is_action_pressed(input_right)
-
-	if can_move and (pressed_left or pressed_right):
-		walk_sound.stream_paused = false
-		accelerate()
-		if pressed_left:
-			current_dir = -1.0
-		if pressed_right:
-			current_dir = 1.0
+	
+	if pressed_left and not current_dir < -1.0:
+		current_dir += -1.0
+	elif pressed_right and not current_dir > 1.0:
+		current_dir += 1.0
 	else:
-		decelerate()
+		current_dir = 0.0
+	
+	if can_move and abs(current_dir) > 0:
+		walk_sound.stream_paused = false
+		accelerate(current_dir, delta)
+	else:
+		decelerate(delta)
 		# TODO: hacer que pare el audio cuando esté pausado
 		walk_sound.stream_paused = true
 
-	look_rotation += current_speed * current_dir
+	look_rotation += current_speed
 
-	var speed_percent = current_speed / (max_speed / 1000)
+	var speed_percent = current_speed / (max_speed * delta / 10)
 	progress += bob_speed
 	current_height = sin(progress) * max_height * speed_percent
 	translate_object_local(Vector3(0,current_height,0))
@@ -103,18 +114,16 @@ func handle_movement():
 	return
 
 
-func accelerate():
-	if abs(current_speed) < max_speed / 1000:
-		current_speed += rotate_accel / 1000
-	else:
-		current_speed = max_speed / 1000
+func accelerate(current_dir : float, delta : float):
+	if abs(current_speed) < max_speed * delta / 10:
+		current_speed += rotate_accel * delta / 10 * current_dir
 
 
-func decelerate():
-	if current_speed > 0 and current_speed > rotate_accel / 1000:
-		current_speed -= rotate_accel / 1000
-	elif current_speed < rotate_accel / 1000:
-		current_speed += rotate_accel / 1000
+func decelerate(delta : float):
+	if abs(current_speed) > 0 and current_speed > rotate_accel * delta / 10:
+		current_speed -= rotate_accel * delta / 10
+	elif current_speed < rotate_accel * delta / 10:
+		current_speed += rotate_accel * delta / 10
 	else:
 		current_speed = 0
 
@@ -157,8 +166,9 @@ func handle_shooting ():
 		shot_ready = false
 		shot_ready_sound_played = false
 
+
 func _input(event: InputEvent) -> void:
-	if not Global.is_archer:
+	if not Global.is_archer or final_stage:
 		return
 	if event.is_action_pressed(input_shoot):
 		arco_sound.playing = true
@@ -177,9 +187,13 @@ func _input(event: InputEvent) -> void:
 func _on_dialogic_signal(arg: String):
 	match arg:
 		"Archer_reset_pos":
-			rotation.y = 0.0
+			rotation.y = -26.0
 			look_rotation = 0.0
 			pass
 		"Archer_final_stage":
+			final_stage = true
+			final_camera.priority = 20
+			max_speed *= 10
+			rotate_accel *= 10
 			pass
 	return

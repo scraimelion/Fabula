@@ -6,6 +6,8 @@ extends Node3D
 @onready var cam_list_parent = $Entorno/Ciudad/CamsCiudad
 
 @export var max_conv : int = 4
+@export var start_final_stage : bool = false
+@export var start_como_veska : bool = false
 
 var cam_list : Array
 
@@ -16,7 +18,12 @@ func _ready() -> void:
 	cam_list = cam_list_parent.get_children()
 	for cam in cam_list:
 		cam.set_priority(0)
-
+		
+	# Setear herramientas de debug
+	Global.initial_stage = not start_final_stage
+	
+	if start_como_veska:
+		Global.change_chara()
 
 func _process(_delta: float) -> void:
 	# DEBUG DRAW
