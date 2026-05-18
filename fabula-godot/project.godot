@@ -39,9 +39,12 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "TownSquareTimeline": "res://Dialogues/Timelines/TownSquareTimeline.dtl",
+"amor_imposible_TL": "res://Dialogues/Timelines/amor_imposible_TL.dtl",
 "castillo_clero_TL": "res://Dialogues/Timelines/castillo_clero_TL.dtl",
 "check_transition_TL": "res://Dialogues/Timelines/check_transition_TL.dtl",
+"conspiradores_TL": "res://Dialogues/Timelines/conspiradores_TL.dtl",
 "default_timeline": "res://Dialogues/Timelines/default_timeline.dtl",
+"entrance_TL": "res://Dialogues/Timelines/entrance_TL.dtl",
 "final_stage_TL": "res://Dialogues/Timelines/final_stage_TL.dtl",
 "guardias_rojos_TL": "res://Dialogues/Timelines/guardias_rojos_TL.dtl",
 "start_timeline": "res://Dialogues/Timelines/start_timeline.dtl",
@@ -73,7 +76,7 @@ save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
 "critical_path": 0,
-"max_conver": 2,
+"max_conver": 5,
 "npc_name1": "Ciudadano",
 "npc_name2": "Otro ciudadano"
 }
@@ -82,6 +85,7 @@ variables={
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=4
 window/size/resizable=false
 window/size/borderless=true
 window/stretch/mode="viewport"

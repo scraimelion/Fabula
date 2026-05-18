@@ -17,7 +17,16 @@
 &"portraits": {
 "Default": {
 "export_overrides": {
-"image": "\"res://Dialogues/Expressions/Townsfolk/Pueblerino.png\""
+"image": "\"res://Dialogues/Expressions/Townsfolk/Pueblerino_black.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"MaestroSupino": {
+"export_overrides": {
+"image": "\"res://Dialogues/Expressions/Townsfolk/MaestroSupino_black.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

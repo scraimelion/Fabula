@@ -679,7 +679,7 @@ func change_speaker(speaker: DialogicCharacter = null, portrait := "") -> void:
 			if join_animation and join_animation_length:
 				_animate_node(character_node, join_animation, join_animation_length)
 
-		_change_portrait_mirror(character_node)
+		#_change_portrait_mirror(character_node)
 
 	if speaker:
 		if speaker.resource_path != dialogic.current_state_info['speaker']:

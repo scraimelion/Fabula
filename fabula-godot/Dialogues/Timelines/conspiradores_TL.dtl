@@ -1,0 +1,9 @@
+do Global.stop_movement()
+do Global.cam_switch_to_static(8)
+set {npc_name1} = "Conspirador"
+set {npc_name2} = "Conspirador"
+Townsfolk: Nadie os ha seguido, ¿verdad?
+Townsfolk2: Seguido no, aunque claramente hay alguien escuchando
+Townsfolk: Bueno, irrelevante
+Townsfolk2: Ya, supongo
+do Dialogic.start_timeline("check_transition_TL")

@@ -45,6 +45,16 @@ func _input(event: InputEvent) -> void:
 		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(max_deg_up), deg_to_rad(max_deg_down))
 
 func _physics_process(delta: float) -> void:
+	
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+		jumping = true
+	else:
+		jumping = false
+	
+	
+	# Ch
 	if Global.is_archer or not Global.can_move:
 		if Global.is_archer:
 			camera.set_priority(0)
@@ -65,13 +75,6 @@ func _physics_process(delta: float) -> void:
 	pivot.rotate_object_local(Vector3.RIGHT, deg_to_rad(-Global.mouse_relative.y * sensibility))
 	pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(max_deg_up), deg_to_rad(max_deg_down))
 
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-		jumping = true
-	else:
-		jumping = false
-	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
@@ -111,6 +114,7 @@ func _physics_process(delta: float) -> void:
 			decel = false
 			character_model.rotation.z = 0
 	
+	#Process animations
 	if velocity.length() > 0.0:
 		running = true
 		if decel:
