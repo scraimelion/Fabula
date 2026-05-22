@@ -6,6 +6,7 @@ var instance
 
 @onready var Camera = $PhantomCamera3D
 @onready var final_camera = $PhantomCamera3D/PhantomCamera3D
+@onready var final_camera_2 = $PhantomCamera3D/PhantomCamera3D2
 @onready var Arco = $PhantomCamera3D/RayCast3D
 @onready var arco_sound = $PhantomCamera3D/RayCast3D/AudioStreamPlayer3D
 @onready var walk_sound = $PhantomCamera3D/AudioStreamPlayer3D
@@ -95,7 +96,8 @@ func handle_movement(delta : float):
 		current_dir = 0.0
 	
 	if can_move and abs(current_dir) > 0:
-		walk_sound.stream_paused = false
+		if not final_stage:
+			walk_sound.stream_paused = false
 		accelerate(current_dir, delta)
 	else:
 		decelerate(delta)
@@ -188,12 +190,15 @@ func _on_dialogic_signal(arg: String):
 	match arg:
 		"Archer_reset_pos":
 			rotation.y = -26.0
-			look_rotation = 0.0
+			look_rotation = -26.0
 			pass
 		"Archer_final_stage":
 			final_stage = true
 			final_camera.priority = 20
 			max_speed *= 10
 			rotate_accel *= 10
+			pass
+		"Archer_final_stage_2":
+			final_camera_2.priority = 21
 			pass
 	return

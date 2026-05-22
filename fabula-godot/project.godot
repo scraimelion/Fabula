@@ -43,6 +43,7 @@ directories/dtl_directory={
 "castillo_clero_TL": "res://Dialogues/Timelines/castillo_clero_TL.dtl",
 "check_transition_TL": "res://Dialogues/Timelines/check_transition_TL.dtl",
 "conspiradores_TL": "res://Dialogues/Timelines/conspiradores_TL.dtl",
+"crime_scene_TL": "res://Dialogues/Timelines/crime_scene_TL.dtl",
 "default_timeline": "res://Dialogues/Timelines/default_timeline.dtl",
 "entrance_TL": "res://Dialogues/Timelines/entrance_TL.dtl",
 "final_stage_TL": "res://Dialogues/Timelines/final_stage_TL.dtl",
@@ -76,7 +77,7 @@ save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
 "critical_path": 0,
-"max_conver": 5,
+"max_conver": 3,
 "npc_name1": "Ciudadano",
 "npc_name2": "Otro ciudadano"
 }

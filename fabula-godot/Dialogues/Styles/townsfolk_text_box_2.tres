@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cxug158exe3g" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_chm54"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_tw3ql"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="3_1n1s4"]
-[ext_resource type="PackedScene" uid="uid://c24a6n3450cbt" path="res://Dialogues/Styles/TextboxWithPortrait/custom_textbox_with_portrait_.tscn" id="4_661jr"]
+[ext_resource type="PackedScene" uid="uid://bfw8yv0kdrwjs" path="res://Dialogues/Styles/TextboxWithPortrait/custom_textbox_with_portrait_Town.tscn" id="4_chm54"]
 [ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="5_x1umk"]
 [ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="6_nbxd2"]
 [ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="7_sx6lj"]
@@ -13,10 +13,10 @@
 [sub_resource type="Resource" id="Resource_pyd1e"]
 script = ExtResource("1_chm54")
 overrides = {
-"global_bg_color": "Color(0, 0, 0, 0)",
-"global_font": "\"res://Dialogues/Styles/Fonts/Courier New.ttf\"",
-"global_font_color": "Color(0.30980393, 0.011764706, 0.011764706, 1)",
-"global_font_size": "24.0"
+"global_bg_color": "Color(1, 0.95686275, 0.8509804, 1)",
+"global_font": "\"Courier New.ttf\"",
+"global_font_color": "Color(0.44705883, 0.11764706, 0.11764706, 1)",
+"global_font_size": "20.0"
 }
 
 [sub_resource type="Resource" id="Resource_53umr"]
@@ -29,16 +29,18 @@ scene = ExtResource("3_1n1s4")
 
 [sub_resource type="Resource" id="Resource_wgt5h"]
 script = ExtResource("1_chm54")
-scene = ExtResource("4_661jr")
+scene = ExtResource("4_chm54")
 overrides = {
-"box_distance": "50.0",
-"box_size": "Vector2(850, 250)",
-"custom_normal_font": "\"res://Dialogues/Styles/Fonts/courbd.ttf\"",
-"name_label_custom_size": "35.0",
-"name_label_customfont": "\"res://Dialogues/Styles/Fonts/courbd.ttf\"",
+"box_distance": "90.0",
+"box_panel": "\"res://Dialogues/Styles/TextboxWithPortrait/Townsfolk_stylebox.tres\"",
+"box_size": "Vector2(800, 160)",
+"custom_normal_font": "\"res://Dialogues/Styles/Fonts/Courier New.ttf\"",
+"name_label_custom_size": "24.0",
+"name_label_customfont": "\"res://Dialogues/Styles/Fonts/Courier New.ttf\"",
 "name_label_use_global_size": "false",
 "portrait_bg_modulate": "Color(0, 0, 0, 0)",
-"text_custom_size": "20.0"
+"text_custom_size": "20.0",
+"text_use_global_size": "false"
 }
 
 [sub_resource type="Resource" id="Resource_mn36b"]

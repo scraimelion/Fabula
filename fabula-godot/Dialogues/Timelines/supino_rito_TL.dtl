@@ -4,9 +4,11 @@ Veska: [portrait=invested]Parece ser que sí, menos mal
 Veska: [portrait=invested]Pero veamos que hace el maestro
 do Global.cam_switch_to_static(4)
 Veska: [portrait=invested]Aja Aja, todo en orden
-Veska: [portrait=invested]Volvemos al principio!
+Veska: [portrait=invested]Veamos entonces
 [signal arg="Archer_reset_pos"]
 do Global.change_chara()
 do Global.cam_switch_to_chara(0)
-Veska: [portrait=simper]No te preocupes, no pasará lo mismo-
+Veska: [portrait=simper]Ya has rechazado una vez tu rol de arquero, te corresponde saber qué ocurre más allá de él.
 do Global.start_movement()
+[wait time="3.0"]
+Veska: [portrait=simper]No te preocupes, no pasará lo mismo que otras veces, o que en el otro juego...

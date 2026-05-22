@@ -31,5 +31,8 @@ func cam_switch_to_static(num_cam: int):
 func cam_switch_to_chara(num_cam: int):
 	in_static_cam = false
 
+func start_final_stage():
+	final_stage = true
+
 func game_is_over():
 	game_over = true

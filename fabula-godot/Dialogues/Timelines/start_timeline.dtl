@@ -1,8 +1,16 @@
 do Global.stop_movement()
 do Global.change_chara()
 Veska: [portrait=shock]!!!
-Veska: [portrait=simper]Muy buenas!
-Veska: [portrait=simper]No esperaba verte por aquí
-Veska: [portrait=simper]Es verdaderamente curioso esto
+Veska: [portrait=simper]¡Muy buenas!
+Veska: [portrait=simper]No esperaba verte por aquí.
+Veska: [portrait=serious]Por lo visto no te ha convencido lo de dispararle a la nube y ya...
+Veska: [portrait=simper]No quiero decir que tuvieras qué. Pero me hace gracia que hayas llegado aquí.
+Veska: [portrait=serious]Sobre todo si no sabías que había nada más allá de disparar la flecha...
+Veska: [portrait=simper]Pero bueno, ¡aquí estas! Has decidido no cumplir tu rol de destruir la ciudad otra vez.
+Veska: [portrait=simper]Ya que has decidido que quieres ver más de este lugar, permíteme hacerte de guía.
+Veska: [portrait=simper]Hay todo un mundo ahí dentro, toda una gente y toda una Historia que va más allá al punto de vista externo que te habíamos dado hasta ahora.
+Veska: [portrait=simper]Y nace todo de una simple idea.
+Veska: [portrait=simper]"Si existen las flechas que petrifican nubes, también pueden existir los conjuros capaces de contrarrestar las amenazas de los enemigos de la ciudad."
+Veska: [portrait=simper]Hasta ahora habías asumido el rol del arquero destructor, nunca capaz de ver más allá del momento en el que la nube desciende sobre la ciudad.
 do Global.start_movement()
-Veska: [portrait=simper]Parece que podemos entrar...
+Veska: [portrait=invested]Pero suficiente hablar. ¡Vayamos a descubrir esta ciudad y su gente!

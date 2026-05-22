@@ -9,25 +9,25 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_3f4eu"]
 size = Vector3(329.01886, 130.57591, 450.67203)
 
-[node name="Cumulo" type="Node3D"]
+[node name="Cumulo" type="Node3D" unique_id=979067801]
 script = ExtResource("1_amqfd")
 
-[node name="Cumulo_mesh" parent="." instance=ExtResource("1_koqui")]
+[node name="Cumulo_mesh" parent="." unique_id=118597240 instance=ExtResource("1_koqui")]
 
-[node name="Cumulo" parent="Cumulo_mesh" index="0"]
+[node name="Cumulo" parent="Cumulo_mesh" index="0" unique_id=969648015]
 visible = false
 surface_material_override/0 = ExtResource("3_1b50f")
 
-[node name="Area3D" type="Area3D" parent="." groups=["nube"]]
+[node name="Area3D" type="Area3D" parent="." unique_id=498083559 groups=["nube"]]
 script = ExtResource("3_3f4eu")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" groups=["nube"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1732016817 groups=["nube"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.009888, 156.93155, 62.800766)
 shape = SubResource("BoxShape3D_3f4eu")
 
-[node name="Cumulo_mball" parent="." instance=ExtResource("5_af7y5")]
+[node name="Cumulo_mball" parent="." unique_id=2124061724 instance=ExtResource("5_af7y5")]
 
-[node name="Mball_065" parent="Cumulo_mball" index="0"]
+[node name="Mball_065" parent="Cumulo_mball" index="0" unique_id=908775749]
 surface_material_override/0 = ExtResource("3_1b50f")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

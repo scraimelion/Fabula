@@ -32,11 +32,11 @@ scene = ExtResource("4_pu7qn")
 script = ExtResource("1_i66w1")
 scene = ExtResource("4_ia186")
 overrides = {
-"box_distance": "50.0",
-"box_size": "Vector2(850, 250)",
+"box_distance": "80.0",
+"box_size": "Vector2(850, 190)",
 "custom_normal_font": "\"res://Dialogues/Styles/Fonts/courbd.ttf\"",
 "name_label_alignment": "2",
-"name_label_custom_size": "35.0",
+"name_label_custom_size": "34.0",
 "name_label_customfont": "\"res://Dialogues/Styles/Fonts/courbd.ttf\"",
 "name_label_use_global_size": "false",
 "portrait_bg_modulate": "Color(0, 0, 0, 0)",

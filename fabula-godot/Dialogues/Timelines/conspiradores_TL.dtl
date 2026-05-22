@@ -1,9 +1,74 @@
 do Global.stop_movement()
 do Global.cam_switch_to_static(8)
-set {npc_name1} = "Conspirador"
-set {npc_name2} = "Conspirador"
+set {npc_name1} = "Conspirador 1"
+set {npc_name2} = "Conspirador 2"
 Townsfolk: Nadie os ha seguido, ¿verdad?
-Townsfolk2: Seguido no, aunque claramente hay alguien escuchando
-Townsfolk: Bueno, irrelevante
-Townsfolk2: Ya, supongo
+do Global.cam_switch_to_static(14)
+Townsfolk2: Nadie, nadie.
+do Global.cam_switch_to_static(15)
+set {npc_name1} = "Conspirador 3"
+Townsfolk: No nos dejan entrar en la ciudad y no hay nadie más fuera. ¿Quién nos iba a seguir?
+do Global.cam_switch_to_static(14)
+Townsfolk2: También es cierto...
+set {npc_name1} = "Conspirador 1"
+do Global.cam_switch_to_static(16)
+Townsfolk: Toda precaución es poca para un tema tan delicado.
+Townsfolk: Vale pues.
+Townsfolk: ¿Quién ha traído la flecha?
+do Global.cam_switch_to_static(14)
+Townsfolk2: ¿Qué flecha?
+do Global.cam_switch_to_static(15)
+set {npc_name1} = "Conspirador 3"
+Townsfolk: ¿La flecha petrificadora?
+set {npc_name1} = "Conspirador 1"
+do Global.cam_switch_to_static(16)
+Townsfolk: ¡¿Cuál si no?!
+do Global.cam_switch_to_static(14)
+Townsfolk2: (Retórica, punto para mí)
+do Global.cam_switch_to_static(15)
+set {npc_name1} = "Conspirador 3"
+Townsfolk:  ¡Te encargabas tú de traerla!
+do Global.cam_switch_to_static(16)
+set {npc_name1} = "Conspirador 1"
+Townsfolk: No puede estar pasando esto...
+Townsfolk: Y hoy era el día perfecto. ¡Mira qué hermosa nube!
+do Global.cam_switch_to_static(14)
+Townsfolk2: No sé... A mí nunca me convenció tu plan.
+Townsfolk2: La verdad que yo siento que me merezco la marca.
+Townsfolk2: Causé muchos problemas y he tenido tiempo para reflexionar sobre ello...
+do Global.cam_switch_to_static(15)
+set {npc_name1} = "Conspirador 3"
+Townsfolk: También me parece un poco desmedido hacerle pagar a la ciudad entera.
+Townsfolk: ¿Encima pretendías que te hiciéramos todo el trabajo sucio para tu vendetta personal?
+do Global.cam_switch_to_static(16)
+set {npc_name1} = "Conspirador 1"
+Townsfolk: Esto va mucho más allá de simple venganza.
+Townsfolk: ¡Es mandar un mensaje a quienes nos arruinaron la vida!
+Townsfolk: ¡Es una cuestión de justicia!
+Townsfolk: ¡Justicia real! ¡¡Justicia divina!!
+do Global.cam_switch_to_static(14)
+Townsfolk2: Yo la verdad que me he adaptado bastante bien a vivir fuera de la ciudad.
+Townsfolk2: Deberías aprender a dejar ir y abrazar las nuevas oportunidades que te da la vida.
+set {npc_name1} = "Conspirador 1"
+do Global.cam_switch_to_static(16)
+Townsfolk: ¡Sus muertos nuevas oportunidades!
+Townsfolk: No hay nada fuera de la ciudad. Una explanada vacía y un recordatorio de que este mundo existe por y para el lugar del que se nos ha prohibido la entrada.
+do Global.cam_switch_to_static(14)
+Townsfolk2: Tenemos este bosquecito.
+Townsfolk2: Es muy relajante, deberías probar a hacer picnic algún día.
+do Global.cam_switch_to_static(15)
+set {npc_name1} = "Conspirador 3"
+Townsfolk: Sinceramente, se me han quitado las ganas de seguir con tu plan.
+Townsfolk: Pintó interesante hace un tiempo pero cada vez me parece que tan sólo eres un antiguo cura que no se acostumbra a dejar de mandar órdenes.
+Townsfolk: Supongo que nos veremos por aquí.
+set {npc_name1} = "Conspirador 1"
+do Global.cam_switch_to_static(16)
+Townsfolk: ¡Traidores! ¡Mentecatos! ¡Inútiles!
+Townsfolk:  ¡No os necesito! ¡Traeré esta ciudad a mis pies algún día y ya veréis cómo se tornan las coas ¡Ya veréis!
+Townsfolk: ¡¡Ni marcas, ni flechas, ni el mismísimo Señor se interpondrá en mi camino!!
+do Global.cam_switch_to_chara(16)
+Veska (serious): Mejor nos alejamos antes de que nos vea...
+Veska (serious): Pero verdaderamente pone en perspectiva por qué alguien querría destruir la ciudad.\
+
+Veska (serious): Aunque no creo que esto sea cómo el clero se imagina el tipo de amenaza para la que se preparan todos los días.
 do Dialogic.start_timeline("check_transition_TL")

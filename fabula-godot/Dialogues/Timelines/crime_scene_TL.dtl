@@ -1,0 +1,17 @@
+do Global.stop_movement()
+do Global.cam_switch_to_static(17)
+set {npc_name1} = "Detective"
+set {npc_name2} = "Asistente"
+Townsfolk: Una noche más en esta ciudad, un caso más que burla mi vigía...
+Townsfolk: Mi némesis acecha de nuevo. Noto cómo se burla de mí, cómo bailo a su son, cómo juega conmigo como una marioneta.
+Townsfolk: El clero nos avisa de una amenaza externa, pero yo huelo la podredumbre interna que corrompe esta ciudad.
+Townsfolk2: ¿Otro caso de basura desechada?
+Townsfolk: Muy perspicaz, mi querido asistente, pero es tanto más que eso...
+Townsfolk: Es una pieza del puzle. Un hilo más del que me mueven, como si fuera su marioneta.
+[wait time="1.0"]
+Townsfolk: Siento que está cerca... Siento que tendría que haber sacado ya el núcleo de la cuestión.
+Townsfolk: No te voy a mentir, querido asistente, hay algo de este caso que me hace pensar que mi pasado ha venido a jugarme una mala pasada...
+Townsfolk2: Ah....
+Townsfolk: Sorprendente lo sé. No quiero ahondar más en una herida que sigue sin haber cerrado del todo
+Townsfolk2: <Empty Text Event>
+do Dialogic.start_timeline("check_transition_TL")
