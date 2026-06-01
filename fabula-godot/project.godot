@@ -48,6 +48,7 @@ directories/dtl_directory={
 "entrance_TL": "res://Dialogues/Timelines/entrance_TL.dtl",
 "final_stage_TL": "res://Dialogues/Timelines/final_stage_TL.dtl",
 "guardias_rojos_TL": "res://Dialogues/Timelines/guardias_rojos_TL.dtl",
+"lugar_feliz_TL": "res://Dialogues/Timelines/lugar_feliz_TL.dtl",
 "start_timeline": "res://Dialogues/Timelines/start_timeline.dtl",
 "supino_rito_TL": "res://Dialogues/Timelines/supino_rito_TL.dtl"
 }
