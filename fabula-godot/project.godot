@@ -44,11 +44,16 @@ directories/dtl_directory={
 "check_transition_TL": "res://Dialogues/Timelines/check_transition_TL.dtl",
 "conspiradores_TL": "res://Dialogues/Timelines/conspiradores_TL.dtl",
 "crime_scene_TL": "res://Dialogues/Timelines/crime_scene_TL.dtl",
+"criminal_TL": "res://Dialogues/Timelines/criminal_TL.dtl",
 "default_timeline": "res://Dialogues/Timelines/default_timeline.dtl",
 "entrance_TL": "res://Dialogues/Timelines/entrance_TL.dtl",
+"faamilia_TL": "res://Dialogues/Timelines/faamilia_TL.dtl",
 "final_stage_TL": "res://Dialogues/Timelines/final_stage_TL.dtl",
 "guardias_rojos_TL": "res://Dialogues/Timelines/guardias_rojos_TL.dtl",
 "lugar_feliz_TL": "res://Dialogues/Timelines/lugar_feliz_TL.dtl",
+"mirador_TL": "res://Dialogues/Timelines/mirador_TL.dtl",
+"monumento_TL": "res://Dialogues/Timelines/monumento_TL.dtl",
+"pasaje_secreto_TL": "res://Dialogues/Timelines/pasaje_secreto_TL.dtl",
 "start_timeline": "res://Dialogues/Timelines/start_timeline.dtl",
 "supino_rito_TL": "res://Dialogues/Timelines/supino_rito_TL.dtl"
 }

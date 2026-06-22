@@ -1,17 +1,22 @@
 do Global.stop_movement()
 do Global.cam_switch_to_static(17)
-set {npc_name1} = "Detective"
-set {npc_name2} = "Asistente"
-Townsfolk: Una noche más en esta ciudad, un caso más que burla mi vigía...
-Townsfolk: Mi némesis acecha de nuevo. Noto cómo se burla de mí, cómo bailo a su son, cómo juega conmigo como una marioneta.
-Townsfolk: El clero nos avisa de una amenaza externa, pero yo huelo la podredumbre interna que corrompe esta ciudad.
-Townsfolk2: ¿Otro caso de basura desechada?
-Townsfolk: Muy perspicaz, mi querido asistente, pero es tanto más que eso...
-Townsfolk: Es una pieza del puzle. Un hilo más del que me mueven, como si fuera su marioneta.
-[wait time="1.0"]
-Townsfolk: Siento que está cerca... Siento que tendría que haber sacado ya el núcleo de la cuestión.
-Townsfolk: No te voy a mentir, querido asistente, hay algo de este caso que me hace pensar que mi pasado ha venido a jugarme una mala pasada...
-Townsfolk2: Ah....
-Townsfolk: Sorprendente lo sé. No quiero ahondar más en una herida que sigue sin haber cerrado del todo
-Townsfolk2: <Empty Text Event>
+set {npc_name2} = "Detective"
+set {npc_name1} = "Asistente"
+Townsfolk2: Una noche más en esta ciudad, un caso más que burla mi vigía...
+Townsfolk2: Mi némesis acecha de nuevo. Noto cómo se burla de mí, cómo bailo a su son, cómo juega conmigo como una marioneta.
+Townsfolk2: El clero nos avisa de una amenaza externa, pero yo huelo la podredumbre interna que corrompe esta ciudad.
+Townsfolk: He venido en cuanto ha llegado la alerta. ¿Está ahí?
+Townsfolk2: Sí. En la caja.
+Townsfolk: ¿Qué hay en la caja?
+Townsfolk2: Chaval, hay cosas en este trabajo que es mejor no saber.
+Townsfolk: ¡¿Qué hay en la caja?!
+Townsfolk2: ¡No, espera! ¡No la abras!
+Townsfolk: No… no puede ser… Urg…
+Townsfolk2: Te lo advertí.
+Townsfolk: Otra… otra bolsa de caramelos… vacía… ¿Cuántas van ya?
+Townsfolk2: Cinco en dos semanas.
+Townsfolk: Dios mío… ¿qué clase de monstruo--?
+Townsfolk2: No es ningún monstruo. Sólo un hombre sería capaz de esto.
+Townsfolk: Juro… ¡Juro que lo voy a encontrar! ¡¡Pagará por esto!! ¡¡Voy a…!!
+Townsfolk2: Olvídalo, Jake, es Fortresstown.
 do Dialogic.start_timeline("check_transition_TL")

@@ -1,0 +1,18 @@
+do Global.stop_movement()
+do Global.cam_switch_to_static(18)
+set {npc_name1} = "Ciudadano honrado"
+Townsfolk2: Hola, ¿quieres un caramelo?
+Veska: [portrait=simper]No gracias, ahora no me apetece mucho.
+Townsfolk2: Bueno, más para mí.
+Veska: [portrait=serious] ¿Por qué haces eso?
+Townsfolk2: ¿Eh?
+Veska: [portrait=serious]La bolsa, ¿no sabes que está mal tirarla en el suelo?
+set {npc_name1} = "Criminal buscado"
+Townsfolk2: ¡Ah!
+Townsfolk2: Emm…
+Townsfolk2: Bueno, ¿has visto tú alguna papelera por aquí?
+Veska: [portrait=serious]La verdad es que no…
+set {npc_name1} = "Criminal buscado con motivos razonables"
+Townsfolk2: No hay ninguna en toda la ciudad. No es culpa mía que no sepan hacer planificación urbana.
+Veska: [portrait=simper]Supongo que es verdad…
+do Dialogic.start_timeline("check_transition_TL")

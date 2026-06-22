@@ -1,0 +1,8 @@
+do Global.cam_switch_to_static(19)
+do Global.stop_movement()
+Veska: [portrait=serious]Hmmmmm... una figura importante seguro...
+Veska: [portrait=shock]¡Aquí dice que es el padre fundador de la iglesia!
+Veska: [portrait=simper]A ver, qué pone aquí...
+Veska: [portrait=frown]La placa está tan descuidada que apenas se puede leer... Parece como si a nadie le importara recordar qué hizo esta persona.
+Veska: [portrait=simper]"El santísimo padre, que, junto con su fé, nos trajo la protección de la amenaza que se cierne sobre esta tierra sagrada."
+do Dialogic.start_timeline("check_transition_TL")

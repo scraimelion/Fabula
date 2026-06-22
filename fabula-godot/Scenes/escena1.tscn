@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dqyrr78l3lhbl" path="res://Images/HabitantesCiudad/maestro_supino.png" id="7_nxigh"]
 [ext_resource type="Texture2D" uid="uid://0i5fo18mrls3" path="res://Images/HabitantesCiudad/garbage-bag-icon.png" id="8_4wvft"]
 [ext_resource type="AudioStream" uid="uid://c5x1apficuwmi" path="res://Sound/wind_noise_loop.mp3" id="8_6f2m1"]
+[ext_resource type="Texture2D" uid="uid://bhypnkror5h05" path="res://Images/HabitantesCiudad/bayon_stickman.png" id="9_iheng"]
 [ext_resource type="PackedScene" uid="uid://x2y48h80ljfy" path="res://Models/Grass/grass_mm.tscn" id="9_o0tgp"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="9_stbg5"]
 [ext_resource type="AudioStream" uid="uid://2ho2h02glnup" path="res://Sound/Bow/draw_shortest.mp3" id="9_vbn67"]
@@ -96,8 +97,20 @@ albedo_texture = ExtResource("8_4wvft")
 material = SubResource("StandardMaterial3D_iheng")
 size = Vector2(1.625, 1.77)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7r74o"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("9_iheng")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yvqaa"]
+material = SubResource("StandardMaterial3D_7r74o")
+size = Vector2(1.625, 1.77)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_32kk3"]
 size = Vector3(8.776499, 6.776609, 7.2378883)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yvqaa"]
+size = Vector3(3.528386, 6.776609, 3.4735584)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4wvft"]
 size = Vector3(4.3899584, 6.1098623, 3.8708231)
@@ -110,6 +123,21 @@ size = Vector3(7.4504595, 6.776609, 5.9975057)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ff3ft"]
 size = Vector3(3.114756, 2.5788562, 7.2291126)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hoyel"]
+size = Vector3(3.114756, 2.5788562, 4.8127985)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m1jwg"]
+size = Vector3(4.4108934, 2.5788562, 7.332923)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iheng"]
+size = Vector3(3.114756, 2.5788562, 2.8401625)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4vvds"]
+size = Vector3(4.844729, 2.5788562, 0.6855842)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7r74o"]
+size = Vector3(4.844729, 2.5788562, 2.8401625)
 
 [sub_resource type="Resource" id="Resource_nxigh"]
 script = ExtResource("10_yeyix")
@@ -240,6 +268,22 @@ script = ExtResource("10_vd6vl")
 fov = 48.0
 metadata/_custom_type_script = "uid://b8hhnqsugykly"
 
+[sub_resource type="Resource" id="Resource_lu5nd"]
+script = ExtResource("10_vd6vl")
+fov = 63.8
+metadata/_custom_type_script = "uid://b8hhnqsugykly"
+
+[sub_resource type="Resource" id="Resource_hv262"]
+script = ExtResource("10_yeyix")
+transition = 1
+ease = 1
+
+[sub_resource type="Resource" id="Resource_e6nw0"]
+script = ExtResource("10_yeyix")
+duration = 2.0
+transition = 1
+ease = 1
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7sqw5"]
 transparency = 4
 cull_mode = 2
@@ -298,12 +342,13 @@ light_specular = 0.0
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1387002310]
-transform = Transform3D(-0.438371, -0.6072162, -0.6626604, 0, 0.7372772, -0.6755901, 0.8987937, -0.29615915, -0.3232011, -106.51146, 1.2960434, -51.949112)
+transform = Transform3D(-0.438371, -0.6072162, -0.6626604, 0, 0.7372772, -0.6755901, 0.8987937, -0.29615915, -0.3232011, -106.50276, 1.2854884, -51.94487)
 top_level = true
 script = ExtResource("1_wa43r")
 
 [node name="PostProcessing" type="MeshInstance3D" parent="Camera3D" unique_id=804707288]
 transform = Transform3D(1, -1.8626451e-09, 0, 0, 1, -6.0535967e-09, 0, 1.8626451e-09, 1, -2.0327568, 0.59023094, -8.350441)
+visible = false
 custom_aabb = AABB(0, 0, 0, 100000, 100000, 100000)
 mesh = SubResource("QuadMesh_m06ph")
 
@@ -482,8 +527,8 @@ transform = Transform3D(0.99641407, 0.08461696, -4.355462e-08, -4.371139e-08, -3
 mesh = SubResource("PlaneMesh_nxigh")
 
 [node name="Villager54" type="MeshInstance3D" parent="Entorno/Ciudad/Ciudadanos" unique_id=1398334312]
-transform = Transform3D(0.36050165, -0.9327591, -4.355462e-08, -1.225146e-08, 4.1959357e-08, -1, 0.9327591, 0.36050165, 3.6987347e-09, -67.75845, 2.4634895, 19.597174)
-mesh = SubResource("PlaneMesh_nxigh")
+transform = Transform3D(-0.89374316, 1.0046226, 0.35221687, -0.5096397, 3.8476728e-08, -1.2932004, -0.93466073, -0.9606422, 0.36834213, -67.87618, 2.6366534, 20.539936)
+mesh = SubResource("PlaneMesh_yvqaa")
 
 [node name="Villager21" type="MeshInstance3D" parent="Entorno/Ciudad/Ciudadanos" unique_id=146283850]
 transform = Transform3D(0.8255574, 0.564319, -4.355462e-08, -3.804408e-08, -2.15252e-08, -1, -0.564319, 0.8255574, 3.6987344e-09, -62.69196, 2.4634886, 36.122337)
@@ -779,6 +824,15 @@ is_critical_path = true
 transform = Transform3D(1.000004, 0, 2.9802322e-07, 0, 1, 0, -2.9802322e-07, 0, 1.000004, 0.30670166, -0.61575794, -1.5350151)
 shape = SubResource("BoxShape3D_32kk3")
 
+[node name="Bayon" type="Area3D" parent="Entorno/Ciudad/AreasCiudad" unique_id=723663797]
+transform = Transform3D(0.9722684, 0, 0.2338699, 0, 1, 0, -0.2338699, 0, 0.9722684, -73.96145, 4.8226585, 19.84011)
+script = ExtResource("17_32kk3")
+timeline = "faamilia_TL"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Entorno/Ciudad/AreasCiudad/Bayon" unique_id=288701566]
+transform = Transform3D(1.0000043, 0, 2.3841858e-07, 0, 1, 0, -2.3841858e-07, 0, 1.0000043, -2.31736, -0.61575794, 0.34716034)
+shape = SubResource("BoxShape3D_yvqaa")
+
 [node name="TownSquare" type="Area3D" parent="Entorno/Ciudad/AreasCiudad" unique_id=1366194777]
 transform = Transform3D(0.95903295, 0, 0.28329584, 0, 1, 0, -0.28329584, 0, 0.95903295, -65.78827, 3.156949, 32.01798)
 script = ExtResource("17_32kk3")
@@ -855,6 +909,51 @@ timeline = "lugar_feliz_TL"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Entorno/Ciudad/AreasCiudad/LugarFeliz" unique_id=750578778]
 transform = Transform3D(1.000004, 0, 4.4703484e-07, 0, 1, 0, -4.4703484e-07, 0, 1.000004, 1.4876022, 0.48036957, -0.78121376)
 shape = SubResource("BoxShape3D_ff3ft")
+
+[node name="PasajeSecreto" type="Area3D" parent="Entorno/Ciudad/AreasCiudad" unique_id=1656759099]
+transform = Transform3D(-0.3274159, 0, 0.94488084, 0, 1, 0, -0.94488084, 0, -0.3274159, -6.129221, 13.762281, -52.21402)
+script = ExtResource("17_32kk3")
+timeline = "pasaje_secreto_TL"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Entorno/Ciudad/AreasCiudad/PasajeSecreto" unique_id=648007759]
+transform = Transform3D(1.000004, 0, 4.4703484e-07, 0, 1, 0, -4.4703484e-07, 0, 1.000004, 1.4875984, 0.48036957, 0.42695427)
+shape = SubResource("BoxShape3D_hoyel")
+
+[node name="Mirador" type="Area3D" parent="Entorno/Ciudad/AreasCiudad" unique_id=320903860]
+transform = Transform3D(-0.43541983, 0, 0.9002281, 0, 1, 0, -0.9002281, 0, -0.43541983, -26.184044, 13.762281, -54.702877)
+script = ExtResource("17_32kk3")
+timeline = "mirador_TL"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Entorno/Ciudad/AreasCiudad/Mirador" unique_id=1133849848]
+transform = Transform3D(1.000004, 0, 4.4703484e-07, 0, 1, 0, -4.4703484e-07, 0, 1.000004, 0.83953094, 0.48036957, 0.9396801)
+shape = SubResource("BoxShape3D_m1jwg")
+
+[node name="Criminal" type="Area3D" parent="Entorno/Ciudad/AreasCiudad" unique_id=1312742820]
+transform = Transform3D(-0.43541983, 0, 0.9002281, 0, 1, 0, -0.9002281, 0, -0.43541983, -47.47165, 14.979321, 11.562739)
+script = ExtResource("17_32kk3")
+timeline = "criminal_TL"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Entorno/Ciudad/AreasCiudad/Criminal" unique_id=1612526472]
+transform = Transform3D(0.93121576, 0, -0.36447024, 0, 1, 0, 0.36447024, 0, 0.93121576, 1.3962431, 0.48036957, 1.3960342)
+shape = SubResource("BoxShape3D_iheng")
+
+[node name="Estatua" type="Area3D" parent="Entorno/Ciudad/AreasCiudad" unique_id=77865222]
+transform = Transform3D(-0.049320385, 0, 0.9987835, 0, 1, 0, -0.9987835, 0, -0.049320385, -24.912134, 18.37425, 53.349907)
+script = ExtResource("17_32kk3")
+timeline = "monumento_TL"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Entorno/Ciudad/AreasCiudad/Estatua" unique_id=675368270]
+transform = Transform3D(0.93121576, 0, -0.36447015, 0, 1, 0, 0.36447015, 0, 0.93121576, 0.9845047, 0.48036957, 2.3917465)
+shape = SubResource("BoxShape3D_4vvds")
+
+[node name="PasajeSecreto2" type="Area3D" parent="Entorno/Ciudad/AreasCiudad" unique_id=1313443492]
+transform = Transform3D(-0.049320385, 0, 0.9987835, 0, 1, 0, -0.9987835, 0, -0.049320385, -14.05575, 18.37425, 57.666977)
+script = ExtResource("17_32kk3")
+timeline = "pasaje_secreto_TL"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Entorno/Ciudad/AreasCiudad/PasajeSecreto2" unique_id=1422749027]
+transform = Transform3D(0.93121576, 0, -0.36447015, 0, 1, 0, 0.36447015, 0, 0.93121576, 1.3771439, 0.48036957, 1.3885612)
+shape = SubResource("BoxShape3D_7r74o")
 
 [node name="CamsCiudad" type="Node3D" parent="Entorno/Ciudad" unique_id=717821033]
 
@@ -983,6 +1082,34 @@ tween_resource = SubResource("Resource_r2kqe")
 camera_3d_resource = SubResource("Resource_63awo")
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
+[node name="18_Criminal" type="Node3D" parent="Entorno/Ciudad/CamsCiudad" unique_id=1453033131]
+transform = Transform3D(0.4210361, 0.044308882, -0.90596193, 0, 0.9988059, 0.04884981, 0.9070447, -0.020567495, 0.42053348, -50.288, 16.003, 11.461)
+script = ExtResource("9_stbg5")
+tween_resource = SubResource("Resource_r2kqe")
+camera_3d_resource = SubResource("Resource_lu5nd")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="19_Monumento" type="Node3D" parent="Entorno/Ciudad/CamsCiudad" unique_id=707806327]
+transform = Transform3D(0.6032085, -0.16854922, -0.7795719, 0, 0.9774156, -0.21132497, 0.7975846, 0.12747276, 0.5895856, -24.891186, 18.787409, 55.22157)
+script = ExtResource("9_stbg5")
+tween_resource = SubResource("Resource_hv262")
+camera_3d_resource = SubResource("Resource_lu5nd")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="20_Bayon" type="Node3D" parent="Entorno/Ciudad/CamsCiudad" unique_id=943459090]
+transform = Transform3D(0.5313991, 0.07824913, -0.8435009, 0, 0.9957244, 0.09237067, 0.8471226, -0.049085595, 0.5291272, -77.056, 2.845, 20.596)
+script = ExtResource("9_stbg5")
+tween_resource = SubResource("Resource_e6nw0")
+camera_3d_resource = SubResource("Resource_lu5nd")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="21_Mirador" type="Node3D" parent="Entorno/Ciudad/CamsCiudad" unique_id=205317636]
+transform = Transform3D(0.7454766, -0.28379565, 0.6030971, 0, 0.9048268, 0.42577964, -0.666533, -0.31740814, 0.6745274, -20.695, 17.19, -48.666)
+script = ExtResource("9_stbg5")
+tween_resource = SubResource("Resource_r2kqe")
+camera_3d_resource = SubResource("Resource_lu5nd")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
 [node name="Personajes" type="Node3D" parent="Entorno/Ciudad" unique_id=732468273]
 
 [node name="MaestroSupino" type="MeshInstance3D" parent="Entorno/Ciudad/Personajes" unique_id=947585262]
@@ -1052,7 +1179,7 @@ max_speed = 0.2
 min_fov = 20.0
 
 [node name="PhantomCamera3D" type="Node3D" parent="FPSArcher" unique_id=1978762306]
-transform = Transform3D(-4.3711374e-08, -0.67559, -0.7372773, 0, 0.7372772, -0.6755901, 0.9999997, -2.9530977e-08, -3.2227415e-08, -118.50487, 1.2960434, -3.8146973e-06)
+transform = Transform3D(-4.3711374e-08, -0.67559, -0.7372773, 0, 0.7372772, -0.6755901, 0.9999997, -2.9530977e-08, -3.2227415e-08, -118.49519, 1.2854884, -3.8142744e-06)
 script = ExtResource("9_stbg5")
 priority = 2
 tween_resource = SubResource("Resource_14rvp")
@@ -1127,7 +1254,7 @@ transform = Transform3D(1.000004, 0, 2.9802322e-07, 0, 1, 0, -2.9802322e-07, 0, 
 shape = SubResource("BoxShape3D_ohn51")
 
 [node name="Ethel" type="Sprite3D" parent="." unique_id=1182519366]
-transform = Transform3D(0.19444785, 0, 0.18004175, 0, 0.265, 0, -0.18004175, 0, 0.19444785, -40.259136, 22.820498, -3.5736704)
+transform = Transform3D(0.19444785, 0, 0.18004175, 0, 0.265, 0, -0.18004175, 0, 0.19444785, -40.259136, 23.523415, -3.5736704)
 texture = ExtResource("10_62dkq")
 script = ExtResource("28_hoyel")
 
@@ -1137,6 +1264,7 @@ visible = false
 texture = ExtResource("11_62dkq")
 
 [connection signal="body_entered" from="Entorno/Ciudad/AreasCiudad/CityEntrance" to="Entorno/Ciudad/AreasCiudad/CityEntrance" method="_on_body_entered"]
+[connection signal="body_entered" from="Entorno/Ciudad/AreasCiudad/Bayon" to="Entorno/Ciudad/AreasCiudad/Bayon" method="_on_body_entered"]
 [connection signal="body_entered" from="Entorno/Ciudad/AreasCiudad/TownSquare" to="Entorno/Ciudad/AreasCiudad/TownSquare" method="_on_body_entered"]
 [connection signal="body_entered" from="Entorno/Ciudad/AreasCiudad/CityHall" to="Entorno/Ciudad/AreasCiudad/CityHall" method="_on_body_entered"]
 [connection signal="body_entered" from="Entorno/Ciudad/AreasCiudad/CrimeScene" to="Entorno/Ciudad/AreasCiudad/CrimeScene" method="_on_body_entered"]
@@ -1145,4 +1273,9 @@ texture = ExtResource("11_62dkq")
 [connection signal="body_entered" from="Entorno/Ciudad/AreasCiudad/Conspiradores" to="Entorno/Ciudad/AreasCiudad/Conspiradores" method="_on_body_entered"]
 [connection signal="body_entered" from="Entorno/Ciudad/AreasCiudad/Amantes" to="Entorno/Ciudad/AreasCiudad/Amantes" method="_on_body_entered"]
 [connection signal="body_entered" from="Entorno/Ciudad/AreasCiudad/LugarFeliz" to="Entorno/Ciudad/AreasCiudad/LugarFeliz" method="_on_body_entered"]
+[connection signal="body_entered" from="Entorno/Ciudad/AreasCiudad/PasajeSecreto" to="Entorno/Ciudad/AreasCiudad/PasajeSecreto" method="_on_body_entered"]
+[connection signal="body_entered" from="Entorno/Ciudad/AreasCiudad/Mirador" to="Entorno/Ciudad/AreasCiudad/Mirador" method="_on_body_entered"]
+[connection signal="body_entered" from="Entorno/Ciudad/AreasCiudad/Criminal" to="Entorno/Ciudad/AreasCiudad/Criminal" method="_on_body_entered"]
+[connection signal="body_entered" from="Entorno/Ciudad/AreasCiudad/Estatua" to="Entorno/Ciudad/AreasCiudad/Estatua" method="_on_body_entered"]
+[connection signal="body_entered" from="Entorno/Ciudad/AreasCiudad/PasajeSecreto2" to="Entorno/Ciudad/AreasCiudad/PasajeSecreto2" method="_on_body_entered"]
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

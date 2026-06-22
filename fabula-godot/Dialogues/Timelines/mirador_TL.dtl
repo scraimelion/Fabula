@@ -1,0 +1,11 @@
+do Global.cam_switch_to_static(21)
+do Global.stop_movement()
+Veska: [portrait=invested]¡Qué hermoso mirador!
+Veska: [portrait=invested]Un sitio público para todo el mundo... Libre acceso y un momento de descanso independiente de donde vengas y a dónde vayas.
+[wait time="1.0"]
+Veska: [portrait=simper]....
+[wait time="1.0"]
+Veska: [portrait=serious]....
+Veska: [portrait=serious]No es demasiado privado he de decir...
+Veska: [portrait=simper]Si encontramos un lugar más reservado te cuento un dato curioso sobre esa puesta de sol.
+do Dialogic.start_timeline("check_transition_TL")
