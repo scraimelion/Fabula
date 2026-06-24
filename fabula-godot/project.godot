@@ -55,6 +55,7 @@ directories/dtl_directory={
 "monumento_TL": "res://Dialogues/Timelines/monumento_TL.dtl",
 "pasaje_secreto_TL": "res://Dialogues/Timelines/pasaje_secreto_TL.dtl",
 "start_timeline": "res://Dialogues/Timelines/start_timeline.dtl",
+"stuck_TL": "res://stuck_TL.dtl",
 "supino_rito_TL": "res://Dialogues/Timelines/supino_rito_TL.dtl"
 }
 layout/style_directory={}

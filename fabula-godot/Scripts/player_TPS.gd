@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var character_model = $chara_anims
 @onready var animation_player = $chara_anims/AnimationPlayer
 @onready var camera = $CamOrigin/SpringArm3D/PhantomCamera3D
+@onready var timer = $Timer
 
 @export var accel = 1.0
 @export var max_speed = 8.0
@@ -17,6 +18,7 @@ extends CharacterBody3D
 var running = false
 var decel = false
 var jumping = false
+var resetting = false
 var current_direction: Vector3
 var max_direction: Vector3
 var min_direction: Vector3
@@ -24,7 +26,9 @@ var min_direction: Vector3
 func _ready() -> void:
 	set_floor_max_angle(deg_to_rad(max_slope_angle))
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+
+
 # Revisar para controlador / para 
 func _input(event: InputEvent) -> void:
 	if Global.is_archer or not Global.can_move:
@@ -50,8 +54,14 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		jumping = true
+		if timer.is_stopped() and not resetting:
+			print("CONTANDO")
+			timer.start()
 	else:
 		jumping = false
+		if not timer.is_stopped():
+			timer.stop()
+			print("PARANDO")
 	
 	
 	# Ch
@@ -128,3 +138,14 @@ func _physics_process(delta: float) -> void:
 		animation_player.play("Idle")
 
 	move_and_slide()
+
+func _on_dialogic_signal(arg: String):
+	match arg:
+		"reset_pos":
+			position = Vector3(-37.95, 2.263, -77.628)
+			resetting = false
+			pass
+
+func _on_timer_timeout() -> void:
+	resetting = true
+	Dialogic.start("stuck_TL")

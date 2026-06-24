@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://bhows86lxck1f" path="res://Models/Pueblo/CiudadFantasia_nivelBajo.glb" id="14_70vey"]
 [ext_resource type="PackedScene" uid="uid://cjrtogjq3hjyt" path="res://Models/Pueblo/CiudadFantasia_nivelMedio.glb" id="15_ohn51"]
 [ext_resource type="PackedScene" uid="uid://djad7jv583glp" path="res://Models/Pueblo/CiudadFantasia_pilares.glb" id="16_4wvft"]
+[ext_resource type="AudioStream" uid="uid://crv57ini2hkrw" path="res://Sound/crowd_loop.mp3" id="16_7r74o"]
 [ext_resource type="Script" uid="uid://bpevptcglu1vw" path="res://Scripts/area_timeline_start.gd" id="17_32kk3"]
 [ext_resource type="Texture2D" uid="uid://43hcs7u0g7x5" path="res://Images/HabitantesCiudad/stickman.png" id="18_g6aci"]
 [ext_resource type="PackedScene" uid="uid://ss203ew3nf7o" path="res://Models/Bonus/Archer.glb" id="25_ff3ft"]
@@ -345,6 +346,9 @@ shadow_enabled = true
 transform = Transform3D(-0.438371, -0.6072162, -0.6626604, 0, 0.7372772, -0.6755901, 0.8987937, -0.29615915, -0.3232011, -106.50276, 1.2854884, -51.94487)
 top_level = true
 script = ExtResource("1_wa43r")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="Camera3D" unique_id=643731789]
+transform = Transform3D(-5.9604645e-08, -3.7252903e-09, 0.99999994, -0.57357633, 0.819152, -5.9604645e-08, -0.8191521, -0.57357645, -2.9802322e-08, 0, 0, 0)
 
 [node name="PostProcessing" type="MeshInstance3D" parent="Camera3D" unique_id=804707288]
 transform = Transform3D(1, -1.8626451e-09, 0, 0, 1, -6.0535967e-09, 0, 1.8626451e-09, 1, -2.0327568, 0.59023094, -8.350441)
@@ -1118,6 +1122,15 @@ mesh = SubResource("PlaneMesh_rydwg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Entorno/Ciudad/Personajes/MaestroSupino" unique_id=1400021644]
 
+[node name="SonidosEspacializados" type="Node3D" parent="Entorno/Ciudad" unique_id=937520303]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Entorno/Ciudad/SonidosEspacializados" unique_id=1204856941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.8684, 0, 35.394726)
+stream = ExtResource("16_7r74o")
+attenuation_model = 2
+volume_db = 10.005
+autoplay = true
+
 [node name="Cumulo" parent="Entorno" unique_id=1319617997 instance=ExtResource("5_vbn67")]
 max_caida = 54.0
 
@@ -1172,6 +1185,9 @@ mesh = SubResource("PlaneMesh_14rvp")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Entorno/Suelo/StaticBody3D" unique_id=1203128746]
 shape = SubResource("ConcavePolygonShape3D_vd6vl")
 
+[node name="spawnPoint" type="Node3D" parent="Entorno" unique_id=1633325216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.949863, 2.263497, -77.62816)
+
 [node name="FPSArcher" type="Node3D" parent="." unique_id=1708979835]
 transform = Transform3D(0.89879394, 0, -0.4383711, 0, 1, 0, 0.4383711, 0, 0.89879394, 0, 0, 0)
 script = ExtResource("4_yashq")
@@ -1192,9 +1208,6 @@ target_position = Vector3(0, 0.5, -1)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="FPSArcher/PhantomCamera3D/RayCast3D" unique_id=1449085305]
 stream = ExtResource("9_vbn67")
-
-[node name="AudioListener3D" type="AudioListener3D" parent="FPSArcher/PhantomCamera3D" unique_id=643731789]
-transform = Transform3D(-4.3711406e-08, 1.776358e-15, 1.0000004, -0.57357657, 0.8191522, -2.5071826e-08, -0.8191521, -0.5735765, -3.5806277e-08, 0, 0, 0)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="FPSArcher/PhantomCamera3D" unique_id=1830917569]
 transform = Transform3D(-4.3711406e-08, 1.776358e-15, 1.0000004, -0.57357657, 0.8191522, -2.5071826e-08, -0.8191521, -0.5735765, -3.5806277e-08, 0, 0, 0)

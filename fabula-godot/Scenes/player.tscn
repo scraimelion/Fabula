@@ -54,3 +54,9 @@ priority = 1
 tween_resource = SubResource("Resource_vgqql")
 camera_3d_resource = SubResource("Resource_x3wgy")
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="Timer" type="Timer" parent="." unique_id=1097820518]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

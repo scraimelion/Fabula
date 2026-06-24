@@ -1,0 +1,6 @@
+Veska: [portrait=serious]Oye...
+Veska: [portrait=invested]Creo que nos hemos quedados aquí atascados.
+Veska: [portrait=simper]¿Qué te parece si volvemos a la entrada de la ciudad?
+[signal arg="reset_pos"]
+[wait time="1.0"]
+Veska: [portrait=invested]Mucho mejor!
