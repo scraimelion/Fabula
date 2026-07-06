@@ -67,7 +67,6 @@ Townsfolk: ¡Traidores! ¡Mentecatos! ¡Inútiles!
 Townsfolk: ¡No os necesito! ¡Traeré esta ciudad a mis pies algún día y ya veréis cómo se tornan las coas ¡Ya veréis!
 Townsfolk: ¡¡Ni marcas, ni flechas, ni el mismísimo Señor se interpondrá en mi camino!!
 do Global.cam_switch_to_chara(16)
-Veska (serious): Mejor nos alejamos antes de que nos vea...
-Veska (serious): Pero verdaderamente pone en perspectiva por qué alguien querría destruir la ciudad.\
-Veska (serious): Aunque no creo que esto sea cómo el clero se imagina el tipo de amenaza para la que se preparan todos los días.
+Veska (serious): [portrait=serious]Mejor nos alejamos antes de que nos vea...
+Veska (serious): [portrait=simper]Pero verdaderamente pone en perspectiva por qué alguien querría destruir la ciudad.
 do Dialogic.start_timeline("check_transition_TL")

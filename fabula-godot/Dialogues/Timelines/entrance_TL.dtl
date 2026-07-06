@@ -1,6 +1,6 @@
-Veska: Aquí querría hablar un poco sobre este pueblo que ahora puedes explorar.
-Veska: Un poco ponerte en situación, que sepas de qué va esto un poco.
-Veska: Hablar de la fantasía, de explorar ese microrrelato inicial de Cortázar.
-Veska: Claro que, deberías saber cuál es el microrrelato inicial.
-Veska: Te puedes mover libremente por el sitio mientras te hablo, esto sólo es un check.
+Veska: [portrait=invested]Ah... Verdaderamente una ciudad encantadora.
+Veska: [portrait=simper]Como dije, esta es una ciudad que existe en un mundo en el que tanto las flechas petrificadoras como las contramedidas para las flechas petrificadoras existen.
+Veska: [portrait=simper]La historia de esta ciudad, su fundación, está muy relacionada con esta potencial amenaza.
+Veska: [portrait=invested]Sin embargo, a simple vista parece un lugar de lo más simplón.
+Veska: [portrait=simper]¡Sigamos y descubramos a su gente!
 do Dialogic.start_timeline("check_transition_TL")

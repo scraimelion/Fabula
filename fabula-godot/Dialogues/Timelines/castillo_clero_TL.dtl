@@ -1,4 +1,23 @@
 do Global.stop_movement()
 do Global.cam_switch_to_static(2)
-Veska: [portrait=serious]Parece que no nos dejan entrar...
+set {npc_name1} = "Amada"
+set {npc_name2} = "Ciudadano"
+Veska: [portrait=invested]¡Y aquí está toda la cúpula superior del pueblo!
+Veska: [portrait=simper]Desde aquí gobierna la élite teocrática, la orden de magos-monjes que supuestamente se encargan de la protección de la ciudad.
+Veska: [portrait=serious]Desde luego que lujos no parecen faltarles....
+Veska: [portrait=simper]Poco tienen que hacer cuando acaban sus ceremonias y ritos, hechas todas en los lugares más lujosos de la ciudad...
+Veska: [portrait=simper] Ellos quitan y ponen gobernadores y duques y marqueses según quienes les sean más propicios.
+Veska: [portrait=simper] Toda esta gente debe haber venido a reclarmarles algo...
+Townsfolk2: ¡A pedirles algo, dice! ¡Ja!
+Townsfolk2: Mal chiste, ¡venimos a hacer el pago de los diezmos!
+Veska: [portrait=shock] ¡Ah!
+Townsfolk2: Los muy vagos ya ni siquiera envían un recolector y espera que vayamos nosotros a 
+Veska: [portrait=serious] ¿Y por qué nunca os habéis plantado en contra de ellos?
+Townsfolk2: Ya sabes... Al final las cosas asín tampoco andan tan mal. Nos dejan en paz y no bajan a meter sus narices en nuestros asuntos. 
+Townsfolk2: Y la verdad, están tan cómodos en su castillo que si alguna vez se nos pasa pagar ni se enteran.
+Townsfolk2: No sé, es un palo y seguro que se podría hacer mejor las cosas, pero tampoco es para tanto.
+Veska: [portrait=serious]Vaya...
+[wait time="1.0"]
+Veska: [portrait=serious]...
+Veska: [portrait=serious]Parece que no vamos a poder entrar...
 do Dialogic.start_timeline("check_transition_TL")

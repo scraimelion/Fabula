@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://cjrtogjq3hjyt" path="res://Models/Pueblo/CiudadFantasia_nivelMedio.glb" id="15_ohn51"]
 [ext_resource type="PackedScene" uid="uid://djad7jv583glp" path="res://Models/Pueblo/CiudadFantasia_pilares.glb" id="16_4wvft"]
 [ext_resource type="AudioStream" uid="uid://crv57ini2hkrw" path="res://Sound/crowd_loop.mp3" id="16_7r74o"]
+[ext_resource type="Script" uid="uid://c05pokpd85h63" path="res://Scripts/maestro_supino.gd" id="16_yvqaa"]
 [ext_resource type="Script" uid="uid://bpevptcglu1vw" path="res://Scripts/area_timeline_start.gd" id="17_32kk3"]
 [ext_resource type="Texture2D" uid="uid://43hcs7u0g7x5" path="res://Images/HabitantesCiudad/stickman.png" id="18_g6aci"]
 [ext_resource type="PackedScene" uid="uid://ss203ew3nf7o" path="res://Models/Bonus/Archer.glb" id="25_ff3ft"]
@@ -184,6 +185,13 @@ metadata/_custom_type_script = "uid://8umksf8e80fw"
 script = ExtResource("10_vd6vl")
 metadata/_custom_type_script = "uid://b8hhnqsugykly"
 
+[sub_resource type="Resource" id="Resource_jkg1i"]
+script = ExtResource("10_yeyix")
+duration = 6.0
+transition = 1
+ease = 1
+metadata/_custom_type_script = "uid://8umksf8e80fw"
+
 [sub_resource type="Resource" id="Resource_iheng"]
 script = ExtResource("10_yeyix")
 transition = 1
@@ -293,6 +301,43 @@ albedo_texture = ExtResource("7_nxigh")
 [sub_resource type="PlaneMesh" id="PlaneMesh_rydwg"]
 material = SubResource("StandardMaterial3D_7sqw5")
 size = Vector2(1.64, 2)
+
+[sub_resource type="Animation" id="Animation_7r74o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.0190032, 59.824116, 19.39717)]
+}
+
+[sub_resource type="Animation" id="Animation_yvqaa"]
+resource_name = "forward"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.94087136, 59.824116, 20.317217), Vector3(-0.85077655, 59.824116, 25.834002)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4vvds"]
+_data = {
+&"RESET": SubResource("Animation_7r74o"),
+&"forward": SubResource("Animation_yvqaa")
+}
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_14rvp"]
 size = Vector2(400, 400)
@@ -996,9 +1041,9 @@ camera_3d_resource = SubResource("Resource_ohn51")
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="5_CupulaClero2" type="Node3D" parent="Entorno/Ciudad/CamsCiudad" unique_id=592503036]
-transform = Transform3D(-0.89362204, 0.046369098, -0.4464184, 0, 0.99464875, 0.10331337, 0.44882, 0.09232309, -0.8888405, -4.4973545, 61.310333, 21.511166)
+transform = Transform3D(-0.8936221, 0.117131375, -0.43326634, 0, 0.9653451, 0.26097637, 0.44881997, 0.23321417, -0.8626541, -4.506009, 61.124683, 21.493933)
 script = ExtResource("9_stbg5")
-tween_resource = SubResource("Resource_70vey")
+tween_resource = SubResource("Resource_jkg1i")
 camera_3d_resource = SubResource("Resource_ohn51")
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
@@ -1117,10 +1162,12 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 [node name="Personajes" type="Node3D" parent="Entorno/Ciudad" unique_id=732468273]
 
 [node name="MaestroSupino" type="MeshInstance3D" parent="Entorno/Ciudad/Personajes" unique_id=947585262]
-transform = Transform3D(0.99641407, 0.08461696, -4.355462e-08, -4.371139e-08, -3.1134792e-15, -1, -0.08461696, 0.99641407, 3.6987338e-09, -0.8866987, 59.824116, 20.955132)
+transform = Transform3D(0.99641407, 0.08461696, -4.355462e-08, -4.371139e-08, -3.1134792e-15, -1, -0.08461696, 0.99641407, 3.6987338e-09, -1.0190032, 59.824116, 19.39717)
 mesh = SubResource("PlaneMesh_rydwg")
+script = ExtResource("16_yvqaa")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Entorno/Ciudad/Personajes/MaestroSupino" unique_id=1400021644]
+libraries/ = SubResource("AnimationLibrary_4vvds")
 
 [node name="SonidosEspacializados" type="Node3D" parent="Entorno/Ciudad" unique_id=937520303]
 

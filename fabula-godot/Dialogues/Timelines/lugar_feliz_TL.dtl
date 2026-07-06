@@ -3,6 +3,7 @@ do Global.stop_movement()
 Veska: [portrait=serious]Este lugar...
 [wait time="1.0"]
 Veska: [portrait=simper]Este lugar... Es para mí.
+Veska: [portrait=serious]((Ni siquiera para Veska... Espero que no le importe que le tome prestada su voz un momento))
 Veska: [portrait=simper]Esta pequeña esquina me encantó mientras estaba creando la ciudad, así que decidí darle un par de banquitos y hacer que fuera mi rinconcito.
 Veska: [portrait=invested]¡Así que gracias por encontrarlo!
 do Global.cam_switch_to_static(13)
@@ -24,7 +25,7 @@ Veska: [portrait=serious]Pero otros días está todo nubloso, inconsistente, com
 Veska: [portrait=serious]Tengo miedo de no tener ni idea de nada, de no ser capaz de transmitir aquello que me han transmitido otros videojuegos.
 Veska: [portrait=simper]Lo que me suelo decir es que no tengo que crear para nadie. Que tan sólo yo tengo que apreciar y disfrutar aquello que cree, y que con eso será suficiente.
 Veska: [portrait=serious]Pero cuanto más trabajo en él, más distante siento que estoy de la persona para quien verdaderamente es este proyecto.
-Veska: [portrait=invested]Y esa serías tú!
+Veska: [portrait=invested]¡Y esa serías tú!
 Veska: [portrait=simper]No le voy a contar a nadie sobre lo que hay en este lugar, así que si has llegado aquí ha sido por deseo propio de explorar mi pequeña ciudad.
 Veska: [portrait=invested]((Que de mía tiene verdaderamente poco.))
 Veska: [portrait=simper]Lo siento... Te he tendido una trampa para secuestrarte y contarme mis inseguridades.

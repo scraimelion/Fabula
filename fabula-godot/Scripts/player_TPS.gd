@@ -54,7 +54,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		jumping = true
-		if timer.is_stopped() and not resetting:
+		if timer.is_stopped() and not resetting and Global.can_move and not Global.is_archer:
 			print("CONTANDO")
 			timer.start()
 	else:

@@ -14,3 +14,6 @@ Veska: [portrait=simper]"Si existen las flechas que petrifican nubes, también p
 Veska: [portrait=simper]Hasta ahora habías asumido el rol del arquero destructor, nunca capaz de ver más allá del momento en el que la nube desciende sobre la ciudad.
 do Global.start_movement()
 Veska: [portrait=invested]Pero suficiente hablar. ¡Vayamos a descubrir esta ciudad y su gente!
+Veska: [portrait=invested]¡Me puedes mover con WASD y controlar la cámara con el ratón!
+[wait time="6.0"]
+Veska: [portrait=invested]Creo que la entrada a la ciudad está para la derecha...

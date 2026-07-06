@@ -1,12 +1,17 @@
 [wait time="3.0"]
-Veska: [portrait=shock]Parece que esa inmensa roca de mármol en la que se ha convertido la nube no cae.
-Veska: [portrait=serious]Al final los ensalmos y el ónfalos de parafina sagrada sí que han servido para algo. Pero, ¿qué hacer ahora?
+Veska: [portrait=shock]!!!
+Veska: [portrait=shock]Parece que la inmensa roca de mármol en la que se ha convertido la nube se sujeta.
+Veska: [portrait=serious](No te voy a mentir, no confiaba demasiado)
+Veska: [portrait=serious]Al final los ensalmos y el ónfalos de parafina sagrada sí que han servido para algo. Pero, ¿qué hará la ciudad ahora?
 [signal arg="Archer_final_stage"]
 do Global.start_final_stage()
 set {npc_name1} = "Autoridad Civil"
 set {npc_name2} = "Autoridad Clérica"
 [wait time="2.0"]
-Veska: [portrait=serious] El Alto Consejo de la Orden se reúne de urgencia con las autoridades civiles
+Veska: [portrait=serious](Puedes moverte libremente alrededor de la ciudad.)
+[wait time="2.0"]
+Veska: [portrait=shock]¡Ah!
+Veska: [portrait=serious] Pues por lo visto, el Alto Consejo de la Orden se reúne de urgencia con las autoridades civiles.
 [wait time="1.0"]
 Townsfolk: ¿¿Qué está pasando??
 Townsfolk2: ¡Es el día, ha ocurrido!
@@ -53,6 +58,18 @@ set {npc_name1} = "Cura exiliado que se ha colado en la reunión"
 Townsfolk: ¡Estoy completamente a bordo!
 set {npc_name2} = "Personaje huraño completamente delusional"
 Townsfolk2: En esa gran superficie se podrá edificar el nuevo Templo Máximo y las mansiones y palacios de la Orden y de los gobernantes.
+Veska: [portrait=serious](Oye, no sé si te has dado cuenta pero están todos los ciudadanos desalojando la ciudad)
+Veska: [portrait=serious](Algo me dice que no se esperan a ver cómo resuelve esta gente el problema)
+Townsfolk2: ¡Silencio muchacha! Si tienes algo que decir, pide una audiencia con el Nuevo Lord Governador.
+set {npc_name1} = "Autoridad civil, borracha de poder"
+Townsfolk: ¡¿Pero quién se cree usted que es?! Ni siquiera sabe escribir bien Gobernador. La ciudad pertenece ahora a los pocos aquí presentes capaces de llevarla por su camino adecuado.
+Townsfolk: Demasiados años lleva el inepto clero cebándose
+Townsfolk2: ¿Cuestiona mi autoridad? ¡Guardias, llévense a este traidor, no le quiero ver en mi reino de los cielos!
+Veska: [portrait=serious]Sé que está muy interesante todo el drama, pero creo que el hechizo está empezando a desvanecerse.
 [signal arg="Final_stage_end_delulu"]
+Townsfolk2: Qué.
+Townsfolk: Qué
+Townsfolk2: Qué
+Veska: [portrait=serious]Qué.
 
 [signal arg="Cloud_continue_fall"]
