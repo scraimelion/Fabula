@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dyj7ma6446o2g"]
+
+[ext_resource type="PackedScene" uid="uid://jcl1rwtpbf4l" path="res://Models/Pueblo/Auxiliares/farolillo.glb" id="1_muvwl"]
+
+[node name="Lantern" type="Node3D" unique_id=1831714762]
+
+[node name="farolillo" parent="." unique_id=1654089296 instance=ExtResource("1_muvwl")]
+
+[node name="OmniLight3D30" type="OmniLight3D" parent="farolillo" unique_id=1258419786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91163826, 0)
+light_size = 20.0
+omni_range = 8.675

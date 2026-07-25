@@ -1,0 +1,65 @@
+do Global.stop_movement()
+do Global.cam_switch_to_static(9)
+set {npc_name1} = "Amada"
+set {npc_name2} = "Amado"
+[wait time="1.0"]
+Townsfolk: Amado mío, ¿dónde estás?\
+¡Cual brisa de verano me olvidó!\
+En vano quise salir del Templo, más\
+el deber puede, mi familia me obligó.
+Townsfolk: ¡Qué estúpida he sido, ya se fue!\
+Mi corazón se llena de dolor.\
+¿Por qué tiene sentido ya vivir?\
+¿Por qué no salto ya de este balcón?
+do Global.cam_switch_to_static(10)
+[wait time="1.0"]
+Townsfolk2: ¡Espérame, mi Amada, no me fui!\
+Hasta bien entrada la noche esperé,\
+mi amor por ti logró en pie mantener\
+mi cuerpo al borde de desfallecer.
+Townsfolk2: ¡Si saltas, amor mío, yo también\
+de la muralla al acto saltaré!
+do Global.cam_switch_to_static(9)
+[wait time="1.0"]
+Townsfolk: ¡Amado! ¡No me has olvidado!
+do Global.cam_switch_to_static(10)
+[wait time="1.0"]
+Townsfolk2: ¿Olvidarte? Ni en la muerte\
+podrá tu amor dejar de perseguirme,\
+¡mis huesos se levantarán por verte!
+do Global.cam_switch_to_static(9)
+[wait time="1.0"]
+Townsfolk: ¿Qué dices? ¡Ni en mil vidas\
+ni aunque me encierren tras mil fuertes,\
+podrán de ti alejarme, vida mía!
+do Global.cam_switch_to_static(10)
+[wait time="1.0"]
+Townsfolk2: ¡Más lo que no pueden fuertes ni soldados\
+lo pueden unos clérigos decŕepitos,\
+apenas unos seres esqueléticos, \
+que prohíben nuestro amor, ¡cuán amargados!
+do Global.cam_switch_to_static(9)
+[wait time="1.0"]
+Townsfolk: ¡Amado, por favor no desesperes!\
+Tú sabes que el deber me sobrepasa\
+sin nuestros rituales, la amenaza\
+invisible quizá a nuestra ciudad condene!
+Townsfolk: Un día este deber terminará,\
+Y podremos juntos empezar de cero.\
+Mientras tanto, anhelo el tacto de tu cuerpo;\
+¡coge esta cuerda y sube a mi ventana!
+do Global.cam_switch_to_static(11)
+[wait time="3.0"]
+Veska: [portrait=serious]Qué triste que no puedan estar juntos por su clase social...
+set {npc_name2} = "Abuela"
+Townsfolk2: ¿Cómo? ¡Ah! No te preocupes, jovencita, hacen esto todas las semanas.
+Veska: [portrait=shock]¿Todas las…?
+Townsfolk2: Sí, antes lo hacían todas las noches, pero los vecinos se quejaron. Ahora sólo lo hacen un día a la semana.
+Veska: [portrait=serious]Ah… pensaba que había muchas diferencias entre la élite teocrática y el pueblo.
+Townsfolk2: A ver, sí… pero no es que haya ninguna ley contra esto ni nada. No es común, pero pasa a veces.
+Veska: [portrait=serious]Hmm… ¿Y entonces por qué hacen esto?
+Townsfolk2: ¿Tú no tienes a nadie, jovencita?
+Veska: [portrait=shock]AEh… Umm… Bueno… Yo no…
+Townsfolk2: Tranquila, eres joven. Algún día descubrirás lo bonito que es encontrar a una persona igual de rara que tú.
+Veska: [portrait=simper]...
+do Dialogic.start_timeline("check_transition_TL")

@@ -1,0 +1,7 @@
+do Global.stop_movement()
+do Global.cam_switch_to_static(1)
+Veska: [portrait=simper]¡Llegamos a la plaza central!
+Veska: [portrait=simper]El núcleo social del pueblo llano. Donde ya la amenaza bajo la que reina el clero ha sido olvidada hace años. 
+Veska: [portrait=simper]Tanto monjes como creyentes ya actúan más por inercia que por miedo y convicción.
+Veska: [portrait=simper] Asumen como simple tradición los ritos que protegen a la ciudad de las amenazas de las que hablan las escrituras.
+do Dialogic.start_timeline("check_transition_TL")

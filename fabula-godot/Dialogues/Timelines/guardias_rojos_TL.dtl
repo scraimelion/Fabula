@@ -1,0 +1,28 @@
+do Global.cam_switch_to_static(6)
+do Global.stop_movement()
+[wait time="1.0"]
+set {npc_name1} = "Guardia 1"
+set {npc_name2} = "Guardia 2"
+Townsfolk: ...
+Townsfolk: Oye.
+Townsfolk2: ¿Sí...?
+Townsfolk: ¿Alguna vez te has preguntado qué hacemos aquí?
+Townsfolk2: Verdaderamente uno de los grandes misterios de la vida...
+Townsfolk2: Somos acaso únicamente números y operaciones matemáticas dentro de un computador o tenemos acaso una voluntad propia, aunque generada por un creador....
+Townsfolk2: No lo sé tío, pero es algo que me mantiene despierto de noche.
+[wait time="1.0"]
+Townsfolk: ¿Qué?
+Townsfolk: Digo que qué hacemos montando guardia aquí.
+do Global.cam_switch_to_static(7)
+Townsfolk: Si lo único que hay en el resto del mundo son unos pastos mal puestos y el fin del cuadrado.
+Townsfolk: Nadie de quién defendernos, nada que guardar, ninguna amenaza.
+Townsfolk: Y a pesar de esto tenemos unas murallas y nos toca pringar para vigilarlas.
+[wait time="1.0"]
+Townsfolk2: Ah...
+[wait time="1.0"]
+Townsfolk: ¿Qué fue todo eso de un creador?
+Townsfolk2: Nada.
+Townsfolk: ¿Quieres hablar de ello?
+Townsfolk2: No.
+[wait time="1.0"]
+do Dialogic.start_timeline("check_transition_TL")

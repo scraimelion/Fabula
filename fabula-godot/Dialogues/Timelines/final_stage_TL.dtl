@@ -1,0 +1,75 @@
+[wait time="3.0"]
+Veska: [portrait=shock]!!!
+Veska: [portrait=shock]Parece que la inmensa roca de mármol en la que se ha convertido la nube se sujeta.
+Veska: [portrait=serious](No te voy a mentir, no confiaba demasiado)
+Veska: [portrait=serious]Al final los ensalmos y el ónfalos de parafina sagrada sí que han servido para algo. Pero, ¿qué hará la ciudad ahora?
+[signal arg="Archer_final_stage"]
+do Global.start_final_stage()
+set {npc_name1} = "Autoridad Civil"
+set {npc_name2} = "Autoridad Clérica"
+[wait time="2.0"]
+Veska: [portrait=serious](Puedes moverte libremente alrededor de la ciudad.)
+[wait time="2.0"]
+Veska: [portrait=shock]¡Ah!
+Veska: [portrait=serious] Pues por lo visto, el Alto Consejo de la Orden se reúne de urgencia con las autoridades civiles.
+[wait time="1.0"]
+Townsfolk: ¿¿Qué está pasando??
+Townsfolk2: ¡Es el día, ha ocurrido!
+Townsfolk: ¡¿Cómo?!
+Townsfolk2: La profecía, la amenaza, al fin ha ocurrido. Aquello para lo que llevamos siglos preparándonos. ¡Gracias a nuestra Fé hemos evitado  la tragedia!
+Townsfolk: ¿Cómo que evitado? ¡No se ve el cielo! Nuestra ciudad no puede convivir en la penumbra, sobre una espada de Damocles.
+Townsfolk2: Bueno... Los escritos de la Orden terminan aquí. La amenaza ocurrió y el pueblo no ha perecido.
+Townsfolk2: Si las oraciones del Maestro Supino pueden mantener la inmensa roca en el cielo, la ciudad podrá seguir con su vida normal.
+Townsfolk2: No veo por qué tanta alarma.
+Townsfolk: ¿!Pero usted de verdad cree que esto es forma en la que continuémos viviendo?! ¡Menudo despropósito sugiere!
+Townsfolk: Tenemos que buscar lo antes posible algo que despetrifique esta nube.
+Townsfolk2: Todo el mundo mínimamente versado sabe que la petrificación es un procedimiento irreversible. ¡Tan sólo se deja en evidencia al sugerir semejantes barbaridades!
+Townsfolk: ¡Barbaridad es la ostia que se va a usted a comer!
+set {npc_name2} = "Obispo con aires de empresario"
+Townsfolk2: Caballeros caballeros, cálmense. Creo que estamos perdiendo la perspectiva del asunto con tanta discusión.
+Townsfolk2: No podemos dejar que el pensamiento catastrofista nos haga perder la perspectiva de lo que en realidad es una excelente oportunidad.
+Townsfolk: ¿Oportunidad...?
+Townsfolk2: Una masa de roca flotando sobre una ciudad es una cosa muy de ver y la demostración palpable de que la intercesión divina obra milagros para proteger a sus fieles.
+Townsfolk2: Convertir la ciudad en un lugar santo no solo haría que no languideciera sino que le supondría una era de prosperidad y bonanza económica.
+Townsfolk: Bueno... No puedo negar eso... Pero eso no quita que en cualquier momento la roca pueda desplomarse.
+Townsfolk: Ni prosperidad, ni bonanza económica, ni ocho cuernos habrá si no hay ciudad para entonces.
+set {npc_name2} = "Personaje huraño que ha oido 'bonanza económica'"
+Townsfolk2: Je... Y unas columnas para la ciudad?
+Townsfolk: Qué quiere decir?
+Townsfolk2: Pues un sistema de columnas que evite la destrucción llegado el momento del derrumbe.
+[signal arg="Final_stage_pillars"]
+Townsfolk: No es... Mala idea... Pero sería una solución harto complicada.
+Townsfolk: Pasaría de ser un problema actualmente resuelto con magia a uno por resolver con muy delicada ingeniería.
+set {npc_name2} = "Autoridad Clérica, con interés"
+Townsfolk2: También tiene que pensar... Si queremos impresionar a peregrinos, una inmensa piedra suspendida impresiona mucho más
+set {npc_name1} = "Autoridad Civil, escéptica pero curiosa"
+Townsfolk: Los pilares son espectaculares, pero poca cosa le ganan en espectáculo a la magia
+set {npc_name2} = "Personaje huraño que ha oido 'bonanza económica'"
+Townsfolk2: ¡Sandeces! Conozco a canteros y masones capaces de eso y más. Mis columnas serán una marca de la ciudad, embelleciéndola y dando camino al reino de los cielos.
+Townsfolk2: Además, con estos pilares podemos acceder a la parte superior de la nube a través de un complejo sistema de escaleras de diseño propio.
+[signal arg="Archer_final_stage_2"]
+Townsfolk2: Imagínense, ejércitos de artesanos ascendiendo a esta nueva tierra que se nos ha concedido.
+Townsfolk2: Ahí construiremos una nueva Thule ajena a la penumbra en la que se cierne la ciudad inferior, ¡una verdadera maravilla del mundo!
+set {npc_name1} = "Autoridad Civil, embelesada con la idea"
+Townsfolk: ¡Ooooh!
+set {npc_name2} = "Autoridad Clérica, imaginando el dinero"
+Townsfolk2: ¡Aaah!
+set {npc_name1} = "Cura exiliado que se ha colado en la reunión"
+Townsfolk: ¡Estoy completamente a bordo!
+set {npc_name2} = "Personaje huraño completamente delusional"
+Townsfolk2: En esa gran superficie se podrá edificar el nuevo Templo Máximo y las mansiones y palacios de la Orden y de los gobernantes.
+Veska: [portrait=serious](Oye, no sé si te has dado cuenta pero están todos los ciudadanos desalojando la ciudad)
+Veska: [portrait=serious](Algo me dice que no se esperan a ver cómo resuelve esta gente el problema)
+Townsfolk2: ¡Silencio muchacha! Si tienes algo que decir, pide una audiencia con el Nuevo Lord Governador.
+set {npc_name1} = "Autoridad civil, borracha de poder"
+Townsfolk: ¡¿Pero quién se cree usted que es?! Ni siquiera sabe escribir bien Gobernador. La ciudad pertenece ahora a los pocos aquí presentes capaces de llevarla por su camino adecuado.
+Townsfolk: Demasiados años lleva el inepto clero cebándose
+Townsfolk2: ¿Cuestiona mi autoridad? ¡Guardias, llévense a este traidor, no le quiero ver en mi reino de los cielos!
+Veska: [portrait=serious]Sé que está muy interesante todo el drama, pero creo que el hechizo está empezando a desvanecerse.
+[signal arg="Final_stage_end_delulu"]
+Townsfolk2: Qué.
+Townsfolk: Qué
+Townsfolk2: Qué
+Veska: [portrait=serious]Qué.
+
+[signal arg="Cloud_continue_fall"]

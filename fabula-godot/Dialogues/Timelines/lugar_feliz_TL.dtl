@@ -1,0 +1,35 @@
+do Global.cam_switch_to_static(12)
+do Global.stop_movement()
+Veska: [portrait=serious]Este lugar...
+[wait time="1.0"]
+Veska: [portrait=simper]Este lugar... Es para mí.
+Veska: [portrait=serious]((Ni siquiera para Veska... Espero que no le importe que le tome prestada su voz un momento))
+Veska: [portrait=simper]Esta pequeña esquina me encantó mientras estaba creando la ciudad, así que decidí darle un par de banquitos y hacer que fuera mi rinconcito.
+Veska: [portrait=invested]¡Así que gracias por encontrarlo!
+do Global.cam_switch_to_static(13)
+[wait time="1.0"]
+Veska: [portrait=invested]¡Y es que mira qué puesta de sol más bonita!
+Veska: [portrait=simper]Esta puesta de sol salió totalmente por accidente.
+Veska: [portrait=simper]Haciendo "Manera sencillísima de destruir una ciudad" puse la luz solar de cualquier manera y después me fijé en lo bien que quedaba con el "dot dither".
+[wait time="1.0"]
+Veska: [portrait=simper]En fin....
+[wait time="1.0"]
+Veska: [portrait=serious]...
+[wait time="1.0"]
+Veska: [portrait=serious]No sé. Tengo algo de miedo.
+Veska: [portrait=serious]¿Estoy haciendo algo que vale la pena?
+Veska: [portrait=serious]Me da pavor  pensar que nada de esto sirva, que me falta algo que querer decir, que no tenga esa pieza central que todo el mundo tiene.
+Veska: [portrait=serious]Todo el proyecto, el manifiesto, los juegos...
+Veska: [portrait=serious]A veces está todo claro, "por supuesto que sí, tengo ideas claras y concisas, esto es algo que me importa, que necesito hacer por mi propio bien".
+Veska: [portrait=serious]Pero otros días está todo nubloso, inconsistente, como si todo lo que he estado trabajando se volviera una pasta gris.
+Veska: [portrait=serious]Tengo miedo de no tener ni idea de nada, de no ser capaz de transmitir aquello que me han transmitido otros videojuegos.
+Veska: [portrait=simper]Lo que me suelo decir es que no tengo que crear para nadie. Que tan sólo yo tengo que apreciar y disfrutar aquello que cree, y que con eso será suficiente.
+Veska: [portrait=serious]Pero cuanto más trabajo en él, más distante siento que estoy de la persona para quien verdaderamente es este proyecto.
+Veska: [portrait=invested]¡Y esa serías tú!
+Veska: [portrait=simper]No le voy a contar a nadie sobre lo que hay en este lugar, así que si has llegado aquí ha sido por deseo propio de explorar mi pequeña ciudad.
+Veska: [portrait=invested]((Que de mía tiene verdaderamente poco.))
+Veska: [portrait=simper]Lo siento... Te he tendido una trampa para secuestrarte y contarme mis inseguridades.
+Veska: [portrait=simper]Pero verdaderamente agradezco que hayas leído esto. Que te haya importado lo suficiente mi juego como para llegar a leer esto.
+[wait time="3.0"]
+Veska: [portrait=simper]Vale, ¡sigamos!
+do Dialogic.start_timeline("check_transition_TL")

@@ -1,0 +1,24 @@
+do Global.cam_switch_to_static(20)
+set {npc_name2} = "Bayon Sha"
+do Global.stop_movement()
+Townsfolk2: [portrait=Bayon]**Pifia en sigilo (1d20+11)**
+Townsfolk2: [portrait=Bayon](¡Mierda, me vio!)
+Veska: [portrait=serious]¿Perdona?
+Townsfolk2: [portrait=Bayon]¿Acaso no sabes quién soy?
+Veska: [portrait=frown]¿Debería...?
+Townsfolk2: [portrait=Bayon]Ah...
+[wait time="1.0"]
+Townsfolk2: [portrait=Bayon]Pffft-- JAJAJAJA, no muchacha, no deberías.
+Townsfolk2: [portrait=Bayon]Lo siento, creo que te he confundido con alguien.
+Townsfolk2: [portrait=Bayon]La verdad... Que esté yo aquí siquiera es un chiste de mal gusto.
+Townsfolk2: [portrait=Bayon]Me parece que roza lo inconsiderado el hecho de que siquiera estés tú. Esta no es ni tu historia ni la mía. No nos corresponde estar aquí.
+Veska: [portrait=frown](¿No habías dicho que no me conocías?)
+Townsfolk2: [portrait=Bayon]¡Pero qué se le va a hacer!
+Townsfolk2: [portrait=Bayon]No puedo mentir... Poder ver Númena con mis propios ojos, pisar este suelo, oir a su gente...
+Townsfolk2: [portrait=Bayon]No puedo evitar estar algo agradecido.
+Townsfolk2: [portrait=Bayon]Al menos puedo saber con tranquilidad que el Gran Marqués Bayon Sha pudo arreglar alguna de sus múltiples cagadas...
+Townsfolk2: [portrait=Bayon]De aquella manera...
+Veska: [portrait=frown]...
+Veska: [portrait=frown]Qué personaje más raro...
+Veska: [portrait=frown]Dejémosle en paz.
+do Dialogic.start_timeline("check_transition_TL")

@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://dm7ouvulcbe2s"]
+
+[ext_resource type="Script" uid="uid://cr62xqq7obsoq" path="res://Scripts/move_testing.gd" id="1_0evto"]
+[ext_resource type="PackedScene" uid="uid://bwxg2witka0l8" path="res://Scenes/player.tscn" id="1_cq3xr"]
+[ext_resource type="Script" uid="uid://c5cvcs3kek0k7" path="res://Scripts/mouse_event_catching.gd" id="1_ks4c7"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_ubiir"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vnv64"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_cq3xr"]
+sky_material = SubResource("ProceduralSkyMaterial_vnv64")
+
+[sub_resource type="Environment" id="Environment_ubiir"]
+background_mode = 2
+sky = SubResource("Sky_cq3xr")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ks4c7"]
+albedo_color = Color(0.42365062, 0.42365065, 0.42365062, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0evto"]
+albedo_color = Color(1, 0.15686275, 0.30588236, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rw8p7"]
+albedo_color = Color(0.36862746, 1, 1, 1)
+
+[node name="Node3D" type="Node3D" unique_id=1756269467]
+script = ExtResource("1_0evto")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1081302731]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=951110567]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_shrink = 2
+script = ExtResource("1_ks4c7")
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=1291837668]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+audio_listener_enable_3d = true
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1979940170]
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Node3D" unique_id=556496896]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6050392, 0.223048)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="CanvasLayer/SubViewportContainer/SubViewport/Node3D/Camera3D" unique_id=1379322123]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("1_ubiir")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer/SubViewportContainer/SubViewport/Node3D" unique_id=1965263980]
+environment = SubResource("Environment_ubiir")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Node3D" unique_id=942804701]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Enviroment" type="Node3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Node3D" unique_id=1222514197]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Node3D/Enviroment" unique_id=1022969418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.31092715, 0)
+use_collision = true
+size = Vector3(50, 0.5, 50)
+material = SubResource("StandardMaterial3D_ks4c7")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Node3D/Enviroment" unique_id=497532839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.716146, 2.6194925, 9.299836)
+use_collision = true
+size = Vector3(1, 5.3, 15.49)
+material = SubResource("StandardMaterial3D_0evto")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Node3D/Enviroment" unique_id=838623462]
+transform = Transform3D(1, 0, 0, 0, 0.9513312, -0.30817038, 0, 0.30817038, 0.9513312, 7.4507375, -2.3363483, 0)
+use_collision = true
+size = Vector3(2.985, 8.68, 12.795)
+material = SubResource("StandardMaterial3D_rw8p7")
+
+[node name="Player" parent="CanvasLayer/SubViewportContainer/SubViewport/Node3D" unique_id=282341483 instance=ExtResource("1_cq3xr")]

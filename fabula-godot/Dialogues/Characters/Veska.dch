@@ -1,0 +1,67 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "veska_text_box",
+"suffix": ""
+},
+&"default_portrait": "simper",
+&"description": "",
+&"display_name": "Veska",
+&"mirror": false,
+&"nicknames": ["Veska"],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"frown": {
+"export_overrides": {
+"image": "\"res://Dialogues/Expressions/Veska/A_frown.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+},
+"invested": {
+"export_overrides": {
+"image": "\"res://Dialogues/Expressions/Veska/A_invester.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+},
+"serious": {
+"export_overrides": {
+"image": "\"res://Dialogues/Expressions/Veska/A_serious_aloof.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+},
+"shock": {
+"export_overrides": {
+"image": "\"res://Dialogues/Expressions/Veska/A_shock.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"simper": {
+"export_overrides": {
+"image": "\"res://Dialogues/Expressions/Veska/A_simper.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+}
+},
+&"scale": 1.0
+}

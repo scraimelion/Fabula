@@ -1,0 +1,48 @@
+set {npc_name1} = "Maestro Supino"
+do Global.cam_switch_to_static(3)
+[wait time="3.0"]
+Veska: [portrait=simper]Bueno, espero que hayas disfrutado de explorar la ciudad.
+Veska: [portrait=simper]Puede que hayas visto todo lo que querías ver o puede que te hayan quedado lugares por visitar.
+Veska: [portrait=invested]Pero independientemente, es momento de seguir adelante. De ver qué es lo que el destino aguarda a esta cidad.
+Veska: [portrait=invested]Nos queda saber exactamente qué hace el clero para ganarse el favor te todo el pueblo.
+Veska: [portrait=invested]El Maestro Supino tiene la importantísima labor de llevar a cabo el ritual para, presuntamente, mantener la ciudad protejida de la terrible amenaza que profetiza el clero.
+Veska: [portrait=invested]Es casi la hora a la que el maestro supino sale a a hacer sus tareas.
+do Global.cam_switch_to_static(4)
+Veska: [portrait=invested]¡Veamos este ritual sagrado en toda su gloria!
+[wait time="4.0"]
+Townsfolk: [portrait=MaestroSupino]Ostias... Que no llego a hacer el rito...
+[signal arg="supino_salir"]
+Townsfolk: [portrait=MaestroSupino]Va... Es sólo un momento y tengo el resto del día para que se me pase la resaca.
+do Global.cam_switch_to_static(5)
+[signal arg="supino_avanza"]
+Townsfolk: [portrait=MaestroSupino]Si durante siglos los "peligros" de las escrituras no se han materializado, no se irán a materializar precisamente el día que el "Maestro Supino" sufre un terrible dolor de cabeza...
+[signal arg="supino_rito"]
+[wait time="1.0"]
+Townsfolk: [portrait=MaestroSupino]Bueno, unas jaculatorias, a untar el ónfalos con la parafina, y mi labor del día está hecha.
+[signal arg="supino_rito_fin"]
+[wait time="2.0"]
+Townsfolk: [portrait=MaestroSupino]Ala, zanjao.
+Townsfolk: [portrait=MaestroSupino]Que nadie me pida nada hasta mañana.
+[wait time="1.0"]
+do Global.cam_switch_to_static(4)
+[wait time="1.0"]
+Veska: [portrait=frown]...
+Veska: [portrait=frown]Debe ser el segundo espectáculo más decepcionante que he visto en mi vida.
+[wait time="2.0"]
+Veska: [portrait=serious]Bueno, ahora que ya sabes sobre la ciudad, supongo que te haces una idea de lo que toca.
+[signal arg="Archer_reset_pos"]
+do Global.change_chara()
+do Global.cam_switch_to_chara(0)
+[wait time="1.0"]
+Veska: [portrait=simper]Volvemos aquí.
+Veska: [portrait=serious]La verdad es que no me queda muy claro qué llevaría a alguien querer destruir una ciudad.
+Veska: [portrait=serious]A lo mejor algo te pasó en ella, te enfadaron tanto sus habitantes que decidiste que merecían la peor venganza que se pudieran imaginar.
+Veska: [portrait=serious]Probablemente, sea el caso.
+Veska: [portrait=serious]Supongo que es, hasta cierto punto, irrelevante. Lo que importa es que desde el principio esto estaba destinado a que pasara.
+[wait time="1.0"]
+Veska: [portrait=invested]Siento que es un poco cruel la situación en la que te pongo.
+Veska: [portrait=invested]Primero te hago pensar que has escapado del rol del arquero, después te doy a conocer el sitio y ahora te obligo a volver a la misma situación.
+Veska: [portrait=simper]Sin embagro, ya has rechazado una vez este rol, te corresponde saber qué ocurre más allá de esto.
+do Global.start_movement()
+[wait time="2.0"]
+Veska: [portrait=serious]Puedes disparar sin miedo... Y confiemos en que el ritual en el que está construido toda la ciudad sirve para algo.
