@@ -374,7 +374,7 @@ size = Vector3(2.9736073, 6.776609, 4.68021)
 
 [node name="Main" type="Node3D" unique_id=94512067]
 script = ExtResource("1_6td6e")
-start_como_veska = true
+start_final_stage = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1470512684]
 environment = SubResource("Environment_l21el")
@@ -895,8 +895,6 @@ shape = SubResource("BoxShape3D_32kk3")
 [node name="CityHall" type="Area3D" parent="Entorno/Ciudad/AreasCiudad" unique_id=1746470707]
 transform = Transform3D(0.95903295, 0, 0.28329584, 0, 1, 0, -0.28329584, 0, 0.95903295, -62.165134, 3.156949, 44.283276)
 script = ExtResource("17_32kk3")
-timeline = "TownSquareTimeline"
-is_critical_path = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Entorno/Ciudad/AreasCiudad/CityHall" unique_id=172433881]
 transform = Transform3D(1.000004, 0, 2.9802322e-07, 0, 1, 0, -2.9802322e-07, 0, 1.000004, 1.3969955, -1.1714804, 3.1523037)
@@ -916,7 +914,6 @@ shape = SubResource("BoxShape3D_32kk3")
 transform = Transform3D(0.17089742, 0, 0.9852892, 0, 1, 0, -0.9852892, 0, 0.17089742, -28.825737, 35.964256, 1.394599)
 script = ExtResource("17_32kk3")
 timeline = "castillo_clero_TL"
-can_reenter = true
 is_critical_path = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Entorno/Ciudad/AreasCiudad/CastilloClero" unique_id=214367196]
@@ -927,6 +924,7 @@ shape = SubResource("BoxShape3D_32kk3")
 transform = Transform3D(0.789738, 0, 0.6134449, 0, 1, 0, -0.6134449, 0, 0.789738, -66.11894, 9.182656, 78.45987)
 script = ExtResource("17_32kk3")
 timeline = "guardias_rojos_TL"
+can_reenter = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Entorno/Ciudad/AreasCiudad/GuardiasRojos" unique_id=378089107]
 transform = Transform3D(1.0000126, 0, 2.0302832e-07, 0, 1, 0, -2.0302832e-07, 0, 1.0000126, -0.83781433, -0.8381071, -0.6318245)
@@ -990,6 +988,7 @@ shape = SubResource("BoxShape3D_iheng")
 transform = Transform3D(-0.049320385, 0, 0.9987835, 0, 1, 0, -0.9987835, 0, -0.049320385, -24.912134, 18.37425, 53.349907)
 script = ExtResource("17_32kk3")
 timeline = "monumento_TL"
+is_critical_path = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Entorno/Ciudad/AreasCiudad/Estatua" unique_id=675368270]
 transform = Transform3D(0.93121576, 0, -0.36447015, 0, 1, 0, 0.36447015, 0, 0.93121576, 0.9845047, 0.48036957, 2.3917465)

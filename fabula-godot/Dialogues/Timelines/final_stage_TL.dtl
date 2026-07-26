@@ -1,8 +1,8 @@
 [wait time="3.0"]
 Veska: [portrait=shock]!!!
-Veska: [portrait=shock]Parece que la inmensa roca de mármol en la que se ha convertido la nube se sujeta.
+Veska: [portrait=shock]Al final los ensalmos y el ónfalos de parafina sagrada sí que han servido para algo. 
 Veska: [portrait=serious](No te voy a mentir, no confiaba demasiado)
-Veska: [portrait=serious]Al final los ensalmos y el ónfalos de parafina sagrada sí que han servido para algo. Pero, ¿qué hará la ciudad ahora?
+Veska: [portrait=serious]Pero, ¿qué hará la ciudad ahora?
 [signal arg="Archer_final_stage"]
 do Global.start_final_stage()
 set {npc_name1} = "Autoridad Civil"
@@ -63,12 +63,15 @@ Veska: [portrait=serious](Algo me dice que no se esperan a ver cómo resuelve es
 Townsfolk2: ¡Silencio muchacha! Si tienes algo que decir, pide una audiencia con el Nuevo Lord Governador.
 set {npc_name1} = "Autoridad civil, borracha de poder"
 Townsfolk: ¡¿Pero quién se cree usted que es?! Ni siquiera sabe escribir bien Gobernador. La ciudad pertenece ahora a los pocos aquí presentes capaces de llevarla por su camino adecuado.
-Townsfolk: Demasiados años lleva el inepto clero cebándose
+Townsfolk: Demasiados años lleva el inepto clero cebándose de impuestos. !Ahora que se ha cumplido su profoecía no nos pueden controlar por el miedo!
 Townsfolk2: ¿Cuestiona mi autoridad? ¡Guardias, llévense a este traidor, no le quiero ver en mi reino de los cielos!
 Veska: [portrait=serious]Sé que está muy interesante todo el drama, pero creo que el hechizo está empezando a desvanecerse.
 [signal arg="Final_stage_end_delulu"]
+set {npc_name1} = "Autoridad civil"
+set {npc_name2} = "Personaje huraño"
 Townsfolk2: Qué.
 Townsfolk: Qué
+set {npc_name2} = "Autoridad clérica."
 Townsfolk2: Qué
 Veska: [portrait=serious]Qué.
 

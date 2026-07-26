@@ -137,8 +137,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_k1na2")
 theme_override_font_sizes/font_size = 54
-text = "Basado en el microrrelato de 
-Julio Cortázar"
+text = "Basado en el relato de 
+Enrique Meseguer Felip"
 horizontal_alignment = 1
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="EndScreen/VBoxContainer" unique_id=1333610983]
