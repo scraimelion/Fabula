@@ -2,7 +2,7 @@
 Tercer y último proyecto de la *Trilogía de una ciudad y su gente*.
 
 
-**Etructura de repositorio**
+## Etructura de repositorio
 
 La carpeta *Fabula-godot* contiene el proyecto de Godot con todos los elementos pertenecientes al proyecto.
 
