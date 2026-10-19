@@ -1,0 +1,24 @@
+do Global.cam_switch_to_static(20)
+set {npc_name2} = "Bayon Sha"
+do Global.stop_movement()
+Townsfolk2: [portrait=Bayon]**Stealth blunder (1d20+11)**
+Townsfolk2: [portrait=Bayon](Shit, she saw me!)
+Veska: [portrait=serious]Excuse me?
+Townsfolk2: [portrait=Bayon]Don't you know who I am?
+Veska: [portrait=frown]Should I...?
+Townsfolk2: [portrait=Bayon]Ah...
+[wait time="1.0"]
+Townsfolk2: [portrait=Bayon]Pffft-- HAHAHAHA. No, girl, you shouldn't.
+Townsfolk2: [portrait=Bayon]I'm sorry, I think I confused you with someone.
+Townsfolk2: [portrait=Bayon]Truth be told... the fact that I'm even here is a bad joke.
+Townsfolk2: [portrait=Bayon]It strikes me as bordering on inconsiderate that you are even here. This is neither your story nor mine. It is not our place to be here.
+Veska: [portrait=frown](Didn't yo say you didn't know me?)
+Townsfolk2: [portrait=Bayon]But what can you do?
+Townsfolk2: [portrait=Bayon]I can't lie... Seeing Númena with my own two eyes, stepping this ground, hearing its people...
+Townsfolk2: [portrait=Bayon]I can't help but feel a bit grateful.
+Townsfolk2: [portrait=Bayon]At least I can rest easy knowing that Grand Marquis Bayon Sha managed to fix some of his many screw-ups...
+Townsfolk2: [portrait=Bayon]Somewhat...
+Veska: [portrait=frown]...
+Veska: [portrait=frown]What a weird guy...
+Veska: [portrait=frown]Better leave him alone.
+do Dialogic.start_timeline("check_transition_TL")

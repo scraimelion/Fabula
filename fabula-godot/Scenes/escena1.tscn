@@ -374,7 +374,6 @@ size = Vector3(2.9736073, 6.776609, 4.68021)
 
 [node name="Main" type="Node3D" unique_id=94512067]
 script = ExtResource("1_6td6e")
-start_final_stage = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1470512684]
 environment = SubResource("Environment_l21el")

@@ -1,0 +1,72 @@
+do Global.stop_movement()
+do Global.cam_switch_to_static(8)
+set {npc_name1} = "Conspirator 1"
+set {npc_name2} = "Conspirator 2"
+Townsfolk: No one followed you, righ?
+do Global.cam_switch_to_static(14)
+Townsfolk2: No one, no one.
+do Global.cam_switch_to_static(15)
+set {npc_name1} = "Conspirator 3"
+Townsfolk: They won't let us into the city, and there's no one else outside. Who would be following us?
+do Global.cam_switch_to_static(14)
+Townsfolk2: That's also true...
+set {npc_name1} = "Conspirator 1"
+do Global.cam_switch_to_static(16)
+Townsfolk: One cannot be too careful with such a delicate matter.
+Townsfolk: Okay then.
+Townsfolk: Who brought the arrow?
+do Global.cam_switch_to_static(14)
+Townsfolk2: What arrow?
+do Global.cam_switch_to_static(15)
+set {npc_name1} = "Conspirator 3"
+Townsfolk: The petrifying arrow?
+set {npc_name1} = "Conspirator 1"
+do Global.cam_switch_to_static(16)
+Townsfolk: What else?!
+do Global.cam_switch_to_static(14)
+Townsfolk2: (Rethoric, point for me)
+do Global.cam_switch_to_static(15)
+set {npc_name1} = "Conspirator 3"
+Townsfolk: You were the one in charge of bringing it!
+do Global.cam_switch_to_static(16)
+set {npc_name1} = "Conspirator 1"
+Townsfolk: This can't be happening...
+Townsfolk: And today was the perfect day. Look at that beautiful cloud!
+do Global.cam_switch_to_static(14)
+Townsfolk2: I don't know... I was never convinced by your plan.
+Townsfolk2: Truth be tol, I feel like I deserve the brand.
+Townsfolk2: I caused a lot of problems and I've had time to reflect on it...
+do Global.cam_switch_to_static(15)
+set {npc_name1} = "Conspirator 3"
+Townsfolk: It also seems a bit excessive to make the entire city pay.
+Townsfolk: Besides that, did you expect us to do all the dirty work for your personal vendetta?
+do Global.cam_switch_to_static(16)
+set {npc_name1} = "Conspirator 1"
+Townsfolk: This goes far beyond petty vengeance.
+Townsfolk: It's about sending a message to those that ruined our lives!
+Townsfolk: It's a matter of justice!
+Townsfolk: Real Justice! Divine Justice!!
+do Global.cam_switch_to_static(14)
+Townsfolk2: To be honest, I've adapted quite well to living outside the city.
+Townsfolk2: You should learn to let go and embrace the new opportunities life gives you.
+set {npc_name1} = "Conspirator 1"
+do Global.cam_switch_to_static(16)
+Townsfolk: To hell with new oportunities!
+Townsfolk: There is nothing outside the city. An empty expanse and a reminder that this world exists by and for the place we have been forbidden to enter.
+do Global.cam_switch_to_static(14)
+Townsfolk2: We have this cute little forest.
+Townsfolk2: It's quite relaxing, you should try having a picnic sometime.
+do Global.cam_switch_to_static(15)
+set {npc_name1} = "Conspirator 3"
+Townsfolk: Honestly, I’ve lost the desire to go ahead with your plan.
+Townsfolk: It seemed interesting a while back, but more and more it strikes me that you're just an old priest who can't get used to stop barking orders.
+Townsfolk: Supongo que nos veremos por aquí.
+set {npc_name1} = "Conspirator 1"
+do Global.cam_switch_to_static(16)
+Townsfolk: Traitors! Fools! Good-for-nothing!
+Townsfolk: I don't need you! I will bring this city to its knees one day, and you'll see how things turn around! You will see!
+Townsfolk: Neither brands, nor arrows, nor the Lord Himself shall stand in my way.!!
+do Global.cam_switch_to_chara(16)
+Veska (serious): [portrait=serious]We better leave before they see us...
+Veska (serious): [portrait=simper]But it really puts into perspective why someone would want to destroy the city.
+do Dialogic.start_timeline("check_transition_TL")

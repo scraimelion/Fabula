@@ -1,0 +1,204 @@
+class_name Player
+extends Node3D
+
+var flecha = load("res://Models/flecha_petrificadora.tscn")
+var instance
+
+@onready var Camera = $PhantomCamera3D
+@onready var final_camera = $PhantomCamera3D/PhantomCamera3D
+@onready var final_camera_2 = $PhantomCamera3D/PhantomCamera3D2
+@onready var Arco = $PhantomCamera3D/RayCast3D
+@onready var arco_sound = $PhantomCamera3D/RayCast3D/AudioStreamPlayer3D
+@onready var walk_sound = $PhantomCamera3D/AudioStreamPlayer3D
+
+## Can we move around?
+@export var can_move : bool = true
+@export var rotate_accel : float = 0.003
+@export var max_speed : float = 0.015
+@export var bob_speed : float = 0.15
+@export var max_height : float = 0.01
+
+@export_group("Input Actions")
+## Name of Input Action to move Left.
+@export var input_left : String = "left"
+## Name of Input Action to move Right.
+@export var input_right : String = "right"
+## Name of Input Action to Shoot.
+@export var input_shoot : String = "jump"
+
+@export_group("Shoot settings")
+@export var min_fov : float = 60.0
+
+
+var current_speed : float
+var current_dir : float = 0
+var look_rotation : float
+var progress : float
+var current_height : float
+var starting_fov : float
+var current_fov : float
+var shooting : bool
+var shot_ready : bool
+var shot_ready_sound_played : bool
+var shoot : bool
+var ding_sound
+var draw_sound
+var final_stage = false;
+
+# @onready var head: Node3D = $RotatePoint
+
+func _ready() -> void:
+	check_input_mappings()
+	current_speed = 0
+	look_rotation = rotation.y
+	current_height = 0
+	progress = 0
+	starting_fov = Camera.camera_3d_resource.fov
+	current_fov = starting_fov
+	shooting = false
+	shot_ready = false
+	shot_ready_sound_played = false
+	ding_sound = load("res://Sound/Bow/ready.mp3")
+	draw_sound = load("res://Sound/Bow/draw_shortest.mp3")
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+
+func _process(delta: float) -> void:
+	walk_sound.stream_paused = true
+
+	if not Global.game_start:
+		return
+				
+	if not Global.is_archer or not Global.can_move:
+		if not Global.is_archer: #esto es una condición de mierda y lo sabes
+			Camera.set_priority(0)
+		else:
+			Camera.set_priority(1)
+		return;
+	
+	
+	handle_movement(delta)
+	
+	if final_stage:
+		return
+		
+	handle_shooting()
+
+
+func handle_movement(delta : float):
+	var pressed_left := Input.is_action_pressed(input_left)
+	var pressed_right := Input.is_action_pressed(input_right)
+	
+	if pressed_left and not current_dir < -1.0:
+		current_dir += -1.0
+	elif pressed_right and not current_dir > 1.0:
+		current_dir += 1.0
+	else:
+		current_dir = 0.0
+	
+	if can_move and abs(current_dir) > 0:
+		if not final_stage:
+			walk_sound.stream_paused = false
+		accelerate(current_dir, delta)
+	else:
+		decelerate(delta)
+		# TODO: hacer que pare el audio cuando esté pausado
+		walk_sound.stream_paused = true
+
+	look_rotation += current_speed
+
+	var speed_percent = current_speed / (max_speed * delta / 10)
+	progress += bob_speed
+	current_height = sin(progress) * max_height * speed_percent
+	translate_object_local(Vector3(0,current_height,0))
+
+	transform.basis = Basis()
+	rotate_y(look_rotation)
+	return
+
+
+func accelerate(current_dir : float, delta : float):
+	if abs(current_speed) < max_speed * delta / 10:
+		current_speed += rotate_accel * delta / 10 * current_dir
+
+
+func decelerate(delta : float):
+	if abs(current_speed) > 0 and current_speed > rotate_accel * delta / 10:
+		current_speed -= rotate_accel * delta / 10
+	elif current_speed < rotate_accel * delta / 10:
+		current_speed += rotate_accel * delta / 10
+	else:
+		current_speed = 0
+
+
+func check_input_mappings():
+	if can_move and not InputMap.has_action(input_left):
+		push_error("Movement disabled. No InputAction found for input_left: " + input_left)
+		can_move = false
+	if can_move and not InputMap.has_action(input_right):
+		push_error("Movement disabled. No InputAction found for input_right: " + input_right)
+		can_move = false
+
+func handle_shooting ():
+	#SHOOTING
+	if shooting:
+		if current_fov > min_fov:
+			current_fov -= 0.3
+		elif shot_ready == false:
+			shot_ready = true
+		Camera.camera_3d_resource.fov = current_fov
+	elif current_fov < starting_fov:
+		current_fov += 6
+		Camera.camera_3d_resource.fov = current_fov
+	else:
+		#arco_sound.playing = false
+		can_move = true
+	
+	if shot_ready and not shot_ready_sound_played:
+		arco_sound.stream = ding_sound
+		arco_sound.playing = true
+		shot_ready_sound_played = true
+
+	if shoot:
+		arco_sound.stream = draw_sound
+		instance = flecha.instantiate()
+		instance.position = Arco.global_position
+		instance.transform.basis = Arco.global_transform.basis
+		get_parent().add_child(instance)
+		shoot = false
+		shot_ready = false
+		shot_ready_sound_played = false
+
+
+func _input(event: InputEvent) -> void:
+	if not Global.is_archer or final_stage:
+		return
+	if event.is_action_pressed(input_shoot):
+		arco_sound.playing = true
+
+		can_move = false
+		shooting = true
+
+	if event.is_action_released(input_shoot):
+		arco_sound.playing = false
+		if current_fov > min_fov:
+			shooting = false
+		else:
+			shooting = false # quitar al implementar el disparo
+			shoot = true
+
+func _on_dialogic_signal(arg: String):
+	match arg:
+		"Archer_reset_pos":
+			rotation.y = -26.0
+			look_rotation = -26.0
+			pass
+		"Archer_final_stage":
+			final_stage = true
+			final_camera.priority = 20
+			max_speed *= 10
+			rotate_accel *= 10
+			pass
+		"Archer_final_stage_2":
+			final_camera_2.priority = 21
+			pass
+	return

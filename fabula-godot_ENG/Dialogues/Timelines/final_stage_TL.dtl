@@ -1,0 +1,78 @@
+[wait time="3.0"]
+Veska: [portrait=shock]!!!
+Veska: [portrait=shock]In the end, the incantations and the sacred paraffin omphalos actually served a purpose.
+Veska: [portrait=serious](Not gonna lie, can't say I had much faith in them)
+Veska: [portrait=serious]But what will the city do now?
+[signal arg="Archer_final_stage"]
+do Global.start_final_stage()
+set {npc_name1} = "Civil Authority"
+set {npc_name2} = "Cleric Authority"
+[wait time="2.0"]
+Veska: [portrait=serious](You can move freely around the city.)
+[wait time="2.0"]
+Veska: [portrait=shock]Oh!
+Veska: [portrait=serious] Well, apparently, the Order's High Council is holding an emergency meeting with the civil authorities.
+[wait time="1.0"]
+Townsfolk: What's happening??
+Townsfolk2: This is the day, it has happened!!
+Townsfolk: What?!
+Townsfolk2: The prophecy, the threat, it has finally come to pass. That for which we have been preparing for centuries. Thanks to our faith, we have averted the tragedy!
+Townsfolk: What do you mean, "avoided"? You can't see the sky! Our city cannot exist in darkness, under a Sword of Damocles.
+Townsfolk2: Well... The Order's writings end here. The threat came to pass, and the people have not perished.
+Townsfolk2: If Supine Master's prayers can keep the immense rock in the sky, the city will be able to go on with its normal life.
+Townsfolk2: I don't see cause for such alarm.
+Townsfolk: But do you really think this is a way for us to go on living? What an absurd suggestion!
+Townsfolk: We need to find something as soon as possible to de-petrify this cloud.
+Townsfolk2: Anyone with even the slightest knowledge knows that petrification is an irreversible process. Suggesting such absurdities only exposes one's own ignorance!
+Townsfolk: Absurd is the wallop you're about to take!
+set {npc_name2} = "Bishop with the air of a businessman"
+Townsfolk2: Gentlemen, gentlemen please calm down. I believe we are losing perspective on the matter with so much discussion.
+Townsfolk2: We cannot let catastrophic thinking cause us to lose perspective on what is actually an excellent opportunity.
+Townsfolk: Oportunity...?
+Townsfolk2: A mass of rock floating above a city is a remarkable sight and palpable proof that divine intercession works miracles to protect the faithful.
+Townsfolk2: Transforming the city into a holy place would not only prevent it from languishing but would also usher in an era of prosperity and economic bonanza.
+Townsfolk: Well... I can't deny that... But that doesn't change the fact that the rock could collapse at any moment.
+Townsfolk: There will be neither prosperity, nor economic bonanza, nor anything of the sort if there is no city by then.
+set {npc_name2} = "Surly character that heard 'economic bonanza'"
+Townsfolk2: Heh... And what about some columns for the city?
+Townsfolk: What do you mean?
+Townsfolk2: Well, a system of columns that prevents destruction when the moment of collapse arrives.
+[signal arg="Final_stage_pillars"]
+Townsfolk: That's not... Such a bad idea... But it would be an such a complicated solution.
+Townsfolk: It would shift from being a problem currently solved by magic to one requiring solution through highly delicate engineering.
+set {npc_name2} = "Cleric Authority, interested"
+Townsfolk2: You also have to consider... If we want to impress pilgrims, a massive suspended stone is far more impressive.
+set {npc_name1} = "Civil Authority, skeptical but curious"
+Townsfolk: The pillars are spectacular, but few things can rival the spectacle of magic.
+set {npc_name2} = "Surly character that heard 'economic bonanza'"
+Townsfolk2: Nonsense! I know stonemasons and masons capable of that and more. My columns will be a landmark for the city, beautifying it and paving the way to the Kingdom of Heaven.
+Townsfolk2: Furthermore, these pillars allow access to the top of the cloud via a complex system of custom-designed stairs.
+[signal arg="Archer_final_stage_2"]
+Townsfolk2: Just imagine: armies of artisans ascending to this new land that has been granted to us.
+Townsfolk2: There we shall build a new Thule, far removed from the gloom that hangs over the city below—a true wonder of the world!
+set {npc_name1} = "Civil Authority, enchanted by the idea"
+Townsfolk: ¡Ooooh!
+set {npc_name2} = "Cleric Authority, imagining the money"
+Townsfolk2: ¡Aaah!
+set {npc_name1} = "Exiled priest who has snuck into the meeting"
+Townsfolk: I'm completely on board!
+set {npc_name2} = "Surly character completely delusional"
+Townsfolk2: On that vast expanse, the new Supreme Temple and the mansions and palaces of the Order and the rulers will be built.
+Veska: [portrait=serious](Hey, I don't know if you've noticed, but all the citizens are evacuating the city.)
+Veska: [portrait=serious](Something tells me they aren't going to wait to see how these people resolve the problem.)
+Townsfolk2: Silence, girl! If you have something to say, request an audience with the new Lord Gobernor.
+set {npc_name1} = "Civil Authority, drunk on power"
+Townsfolk: But who do you think you are?! You don't even know how to write governor. The city now belongs to the few present here who are capable of guiding it along the right path.
+Townsfolk: For far too long, the inept clergy has been gorging itself on taxes. Now that their prophecy has been fulfilled, they can no longer control us through fear!
+Townsfolk2: You cuestion my authority? Guards, take this traitor away, I do not want to see him in my Kingdom of Heaven!
+Veska: [portrait=serious]I know the drama is quite engaging, but I believe the spell is starting to vanish.
+[signal arg="Final_stage_end_delulu"]
+set {npc_name1} = "Civil Authority"
+set {npc_name2} = "Cleric Authority"
+Townsfolk2: What.
+Townsfolk: What.
+set {npc_name2} = "Autoridad clérica."
+Townsfolk2: What.
+Veska: [portrait=serious]What.
+
+[signal arg="Cloud_continue_fall"]

@@ -1,0 +1,22 @@
+do Global.stop_movement()
+do Global.cam_switch_to_static(17)
+set {npc_name2} = "Detective"
+set {npc_name1} = "Assistant"
+Townsfolk2: Another night in this city, another case that eludes my watch...
+Townsfolk2: My nemesis is lurking again. I can feel it mocking me, making me dance to its tune, playing with me like a puppet.
+Townsfolk2: The clergy warns us of an external threat, but I smell the internal rot corrupting this city.
+Townsfolk: I came as soon as the alert arrived. Is it there?
+Townsfolk2: Yes. In the box.
+Townsfolk: What's in the box?
+Townsfolk2: Kid, there are things in this job you're better off not knowing.
+Townsfolk: What's in the box??!
+Townsfolk2: No, wait! Don't open it!
+Townsfolk: No… It can't be… Urgh…
+Townsfolk2: I warned ya.
+Townsfolk: Another… Another candy wrapping… empty… How many so far?
+Townsfolk2: Five in two weeks.
+Townsfolk: My God… What kind of monster--?
+Townsfolk2: Not a monster. Only a man could do this.
+Townsfolk: I swear… I swear I'll find them! They'll pay for this!! I will…!!
+Townsfolk2: Forget it Jake, it's Fortresstown.
+do Dialogic.start_timeline("check_transition_TL")

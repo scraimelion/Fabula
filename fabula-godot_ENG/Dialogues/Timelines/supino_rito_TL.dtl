@@ -1,0 +1,49 @@
+set {npc_name1} = "Supine Master"
+do Global.cam_switch_to_static(3)
+[wait time="3.0"]
+Veska: [portrait=simper]Bueno, espero que hayas disfrutado de explorar la ciudad.
+Veska: [portrait=simper]You might have seen everything you wanted to see, or there might still be places left for you to visit.
+Veska: [portrait=invested]But regardless, it's time to move on. To see what fate has in store for this city.
+Veska: [portrait=invested]It remains for us to know exactly what the clergy does to win the favor of the entire people.
+Veska: [portrait=invested]The Supine Master has the vitally important task of performing the protection ritual.
+Veska: [portrait=invested]This way, supposedly, the city is kept safe from the terrible threat prophesied by the clergy.
+Veska: [portrait=invested]It is almost time for the indolent master to go out and attend to his tasks.
+do Global.cam_switch_to_static(4)
+Veska: [portrait=invested]Let's see this sacred ritual in all its glory!
+[wait time="4.0"]
+Townsfolk: [portrait=MaestroSupino]Shit... I'm not going to make it in time for the ritual...
+[signal arg="supino_salir"]
+Townsfolk: [portrait=MaestroSupino]Come on... It'll only take a moment, and I'll have the rest of the day to sleep off the hangover.
+do Global.cam_switch_to_static(5)
+[signal arg="supino_avanza"]
+Townsfolk: [portrait=MaestroSupino]If for centuries the "dangers" of the scriptures have not materialized over, they are hardly going to materialize on the very day the Supine Master is suffering from a terrible headache...
+[signal arg="supino_rito"]
+[wait time="1.0"]
+Townsfolk: [portrait=MaestroSupino]Right, a few short prayers, smear the omphalos with paraffin, and my work for the day is done.
+[signal arg="supino_rito_fin"]
+[wait time="2.0"]
+Townsfolk: [portrait=MaestroSupino]There, that's that on that.
+Townsfolk: [portrait=MaestroSupino]Nobody ask me anything until tomorrow.
+[wait time="1.0"]
+do Global.cam_switch_to_static(4)
+[wait time="1.0"]
+Veska: [portrait=frown]...
+Veska: [portrait=frown]It has to be the second most disappointing show I've ever seen in my life.
+[wait time="2.0"]
+Veska: [portrait=serious]Well, now that you know about the city, I suppose you have an idea of ​​what comes next.
+[signal arg="Archer_reset_pos"]
+do Global.change_chara()
+do Global.cam_switch_to_chara(0)
+[wait time="1.0"]
+Veska: [portrait=simper]We're back here.
+Veska: [portrait=serious]The truth is, it’s not entirely clear to me what would drive someone to want to destroy a city.
+Veska: [portrait=serious]Perhaps something happened to you here, its inhabitants angered you so much that you decided they deserved the worst revenge imaginable.
+Veska: [portrait=serious]That's probably not the case.
+Veska: [portrait=serious]I suppose that is, to a certain extent, irrelevant. What matters is that, from the start, this was bound to happen.
+[wait time="1.0"]
+Veska: [portrait=invested]I feel the situation I'm putting you in is a bit cruel.
+Veska: [portrait=invested]First, I make you think you’ve escaped the role of the archer. Then, I reveal the location to you. And now, I force you back into the same situation.
+Veska: [portrait=simper]However, you have already rejected this role once. You have earned the right to find out what lies beyond that.
+do Global.start_movement()
+[wait time="2.0"]
+Veska: [portrait=serious]You can fire without fear... And let's hope the ritual the entire city is built around serves a purpose.[aa=2.0]

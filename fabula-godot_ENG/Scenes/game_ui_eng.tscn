@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://bhfo3egnq0h52"]
+
+[ext_resource type="Script" uid="uid://d03ara53vblvg" path="res://Scripts/tutorial_ui.gd" id="1_gank6"]
+[ext_resource type="Texture2D" uid="uid://bd1a85tuwai1q" path="res://UI/TutorialUI_ENG.png" id="2_gank6"]
+[ext_resource type="Texture2D" uid="uid://cw5uvp35ywd6i" path="res://UI/Resources/crosshair.png" id="3_pjwsk"]
+[ext_resource type="Script" uid="uid://de4u8tp30xdd" path="res://Scripts/end_screen.gd" id="4_ldmlg"]
+[ext_resource type="FontFile" uid="uid://iow0821odm7" path="res://UI/Fonts/georgiai.ttf" id="5_uhgcw"]
+[ext_resource type="Texture2D" uid="uid://cuj405lqwikwf" path="res://UI/Resources/continue.png" id="6_8gg50"]
+[ext_resource type="AudioStream" uid="uid://jsu586qxuvd8" path="res://Sound/boom.mp3" id="7_qgp25"]
+[ext_resource type="Script" uid="uid://cqmuhlbijghco" path="res://Scripts/UI/start_screen.gd" id="8_s5qcj"]
+
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gank6")
+
+[node name="Tutorial" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = 50.0
+offset_right = 500.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gank6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.453
+anchor_right = 0.5
+anchor_bottom = 0.453
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_pjwsk")
+
+[node name="EndScreen" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("4_ldmlg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -547.5
+offset_top = -76.5
+offset_right = 547.5
+offset_bottom = 123.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 39
+
+[node name="Label" type="Label" parent="EndScreen/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("5_uhgcw")
+theme_override_font_sizes/font_size = 54
+text = "Game by
+Numas Broccoli"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="EndScreen/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("5_uhgcw")
+theme_override_font_sizes/font_size = 54
+text = "Inspired by the micro story by:
+Julio Cortázar"
+horizontal_alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="EndScreen/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="EndScreen/VBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("6_8gg50")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="EndScreen"]
+stream = ExtResource("7_qgp25")
+
+[node name="StartScreen" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("8_s5qcj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -547.5
+offset_top = -76.5
+offset_right = 547.5
+offset_bottom = 123.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 39
+
+[node name="Label" type="Label" parent="StartScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("5_uhgcw")
+theme_override_font_sizes/font_size = 56
+text = "The Simplest Way to Destroy a City"
+horizontal_alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="StartScreen/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="StartScreen/VBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("6_8gg50")
+
+[node name="Timer" type="Timer" parent="."]

@@ -1,0 +1,194 @@
+[gd_scene format=3 uid="uid://f0fm27inssxk"]
+
+[ext_resource type="Texture2D" uid="uid://cw5uvp35ywd6i" path="res://UI/Resources/crosshair.png" id="1_3rlp6"]
+[ext_resource type="Script" uid="uid://cqmuhlbijghco" path="res://Scripts/UI/start_screen.gd" id="1_afy8x"]
+[ext_resource type="Script" uid="uid://d03ara53vblvg" path="res://Scripts/tutorial_ui.gd" id="1_vealc"]
+[ext_resource type="FontFile" uid="uid://iow0821odm7" path="res://UI/Fonts/georgiai.ttf" id="2_k1na2"]
+[ext_resource type="Script" uid="uid://de4u8tp30xdd" path="res://Scripts/end_screen.gd" id="2_obik5"]
+[ext_resource type="Texture2D" uid="uid://bd1a85tuwai1q" path="res://UI/TutorialUI_ENG.png" id="2_rxsu6"]
+[ext_resource type="Texture2D" uid="uid://cuj405lqwikwf" path="res://UI/Resources/continue.png" id="3_vdywr"]
+[ext_resource type="AudioStream" uid="uid://jsu586qxuvd8" path="res://Sound/boom.mp3" id="5_xlnb1"]
+
+[sub_resource type="Animation" id="Animation_rxsu6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tutorial:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y8vuf"]
+resource_name = "tutorial_anim"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tutorial:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5666667, 1.4666667, 5.133333, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1pjl6"]
+_data = {
+&"RESET": SubResource("Animation_rxsu6"),
+&"tutorial_anim": SubResource("Animation_y8vuf")
+}
+
+[node name="GameUI" type="Control" unique_id=2092441166]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vealc")
+show_time = 500
+
+[node name="ArcherHUD" type="Control" parent="." unique_id=368609639]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tutorial" type="TextureRect" parent="ArcherHUD" unique_id=123165448]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -600.0
+offset_right = 600.0
+offset_bottom = 400.0
+grow_horizontal = 2
+texture = ExtResource("2_rxsu6")
+
+[node name="Crosshair" type="TextureRect" parent="ArcherHUD" unique_id=1065287618]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3rlp6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ArcherHUD" unique_id=630313568]
+libraries/ = SubResource("AnimationLibrary_1pjl6")
+
+[node name="EndScreen" type="ColorRect" parent="." unique_id=336572267]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_obik5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndScreen" unique_id=735583796]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -547.5
+offset_top = -76.5
+offset_right = 547.5
+offset_bottom = 123.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 39
+
+[node name="Label" type="Label" parent="EndScreen/VBoxContainer" unique_id=112651886]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_k1na2")
+theme_override_font_sizes/font_size = 54
+text = "Game by
+Enrique Meseguer & Fernández de Sevilla"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="EndScreen/VBoxContainer" unique_id=1639517025]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_k1na2")
+theme_override_font_sizes/font_size = 54
+text = "Based on the story by 
+Enrique Meseguer Felip"
+horizontal_alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="EndScreen/VBoxContainer" unique_id=1333610983]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="EndScreen/VBoxContainer/AspectRatioContainer" unique_id=34839557]
+layout_mode = 2
+texture = ExtResource("3_vdywr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="EndScreen" unique_id=1540554782]
+stream = ExtResource("5_xlnb1")
+
+[node name="StartScreen" type="ColorRect" parent="." unique_id=1168694524]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_afy8x")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartScreen" unique_id=1847057525]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -547.5
+offset_top = -76.5
+offset_right = 547.5
+offset_bottom = 123.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 39
+
+[node name="Label" type="Label" parent="StartScreen/VBoxContainer" unique_id=611057740]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_k1na2")
+theme_override_font_sizes/font_size = 56
+text = "Fábula"
+horizontal_alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="StartScreen/VBoxContainer" unique_id=1955926920]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="StartScreen/VBoxContainer/AspectRatioContainer" unique_id=704539977]
+layout_mode = 2
+texture = ExtResource("3_vdywr")
+
+[node name="Timer" type="Timer" parent="." unique_id=2015685648]

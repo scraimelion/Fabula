@@ -1,0 +1,6 @@
+Veska: [portrait=invested]Ah... Truly a charming city.[aa=3.0]
+Veska: [portrait=simper]As I said, this is a city from a world where both petrifying arrows and countermeasures against petrifying arrows exist.[aa=3.0]
+Veska: [portrait=simper]The history of this city, its founding, is closely linked to this potential threat. [aa=3.0]
+Veska: [portrait=invested]However, at first glance, it doesn't quite look like a remarkable place.[aa=3.0]
+Veska: [portrait=simper]Let's go meet its people![aa=3.0]
+do Dialogic.start_timeline("check_transition_TL")

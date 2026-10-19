@@ -1,0 +1,22 @@
+do Global.stop_movement()
+do Global.cam_switch_to_static(2)
+set {npc_name2} = "Citizen"
+Veska: [portrait=invested]And here we can find the city's upper sphere!
+Veska: [portrait=simper]From here the theocratic elite rules, the order of wizard-monks that supposedly protect the city.
+Veska: [portrait=serious]They certainly don't seem to be lacking in luxuries...
+Veska: [portrait=simper]There is little for them to do once their ceremonies and rites, all held in the city's most luxurious venues, have concluded...
+Veska: [portrait=simper] They remove and appoint governors, dukes, and marquises, depending on who is most favorable to them.
+Veska: [portrait=simper] All these people must have come to demand something from them...
+Townsfolk2: To demand something, she says! Ha!
+Townsfolk2: What a bad joke, we've come to pay our tithes!
+Veska: [portrait=shock] Oh!
+Townsfolk2: Those lazy bums don't even send a collector anymore and expect us to go and pay.
+Veska: [portrait=serious] And why have you never stood up to them?
+Townsfolk2: You know... Things this way aren't that bad either. They leave us alone and don't come down to stick their noses into our business.
+Townsfolk2: And truth be told, They are so comfortable in their high castle that if we ever happen to miss a payment, they don't even notice.
+Townsfolk2: I don't know, it's a bummer and things could surely be done better, but it's not that big a deal.
+Veska: [portrait=serious]I see...
+[wait time="1.0"]
+Veska: [portrait=serious]...
+Veska: [portrait=serious]Doesn't look like they'll let us in...
+do Dialogic.start_timeline("check_transition_TL")

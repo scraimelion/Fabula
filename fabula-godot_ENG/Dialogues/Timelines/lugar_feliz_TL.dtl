@@ -1,0 +1,35 @@
+do Global.cam_switch_to_static(12)
+do Global.stop_movement()
+Veska: [portrait=serious]This place...
+[wait time="1.0"]
+Veska: [portrait=simper]This place... It's for me.
+Veska: [portrait=serious]((Not even for Veska... I hope she doesn't mind me taking her voice for a moment))
+Veska: [portrait=simper]I fell in love with this little corner while I was creating the city, so I decided to get a couple of cute benches and make it my little corner.
+Veska: [portrait=invested]So thank you for finding it!
+do Global.cam_switch_to_static(13)
+[wait time="1.0"]
+Veska: [portrait=invested]Just look at that beautiful sunset!
+Veska: [portrait=simper]This sunset happened entirely by accident.
+Veska: [portrait=simper]Creating "The Simplest Way to Destroy a City" I just put the sunlight in haphazardly, and then I noticed how good it looked combined with the "dot dither".
+[wait time="1.0"]
+Veska: [portrait=simper]Well....
+[wait time="1.0"]
+Veska: [portrait=serious]...
+[wait time="1.0"]
+Veska: [portrait=serious]I don't know. I'm somewhat scared.
+Veska: [portrait=serious]Am I doing something worthwhile?
+Veska: [portrait=serious]It terrifies me to think that none of this will amount to anything, that I’m missing something I want to say, that I lack that central piece everyone else has.
+Veska: [portrait=serious]The entire project, the manifesto, the games...
+Veska: [portrait=serious]Sometimes everything is clear: "Of course, I have clear, concise ideas, this is something that matters to me, something I need to do for my own good."
+Veska: [portrait=serious]But on other days, everything is cloudy and inconsistent, as if everything I’ve been working on were turning into a gray mush.
+Veska: [portrait=serious]I’m afraid of having absolutely no idea what I’m doing of being unable to convey what other video games have conveyed to me.
+Veska: [portrait=simper]What I usually tell myself is that I don't have to create for anyone else. That I am the only one who needs to appreciate and enjoy what I create, and that that will be enough.
+Veska: [portrait=serious]But the more I work on it, the more distant I feel from the person for whom this project is truly intended.
+Veska: [portrait=invested]And that would be you!
+Veska: [portrait=simper]I won't tell anyone what's in this place, so if you've ended up here, it's because you wanted to explore my little city.
+Veska: [portrait=invested]((Which is truly very little of my own.))
+Veska: [portrait=simper]I'm sorry... I set a trap to kidnap you and tell you about my insecurities.
+Veska: [portrait=simper]But I am truly grateful that you read this. That you cared enough about my game to actually read this.
+[wait time="3.0"]
+Veska: [portrait=simper]Okay, Let's go on!
+do Dialogic.start_timeline("check_transition_TL")

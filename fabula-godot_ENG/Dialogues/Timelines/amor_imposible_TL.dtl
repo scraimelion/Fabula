@@ -1,0 +1,66 @@
+do Global.stop_movement()
+do Global.cam_switch_to_static(9)
+set {npc_name1} = "Lover"
+set {npc_name2} = "Lover"
+[wait time="1.0"]
+Townsfolk: My love, where art thou?\
+Like the summer breeze he forgot me!\
+In vain I attempted to leave the Temple, \
+for duty called and my family forced me.
+Townsfolk: How stupid I've been, he left already!\
+My heart swells with pain.\
+Why should I keep living?\
+Why shouldn't I just jump out of this balcony?
+do Global.cam_switch_to_static(10)
+[wait time="1.0"]
+Townsfolk2: Wait for me, my love, I didn't leave!\
+Until the deep of the night I waited,\
+my love for you kept awake\
+my body from the brink of collapse.
+Townsfolk2: If you jump, my love, I too will.\
+From the wall I shall jump.
+do Global.cam_switch_to_static(9)
+[wait time="1.0"]
+Townsfolk: My love! Thou hast not forgotten me!
+do Global.cam_switch_to_static(10)
+[wait time="1.0"]
+Townsfolk2: Forget you? Not in death\
+could thy love stop pursuing me,\
+my bones would stand to see thee
+do Global.cam_switch_to_static(9)
+[wait time="1.0"]
+Townsfolk: What sayest thou? Not in a thousand lives\
+even if I were to be locked behind a thousand forts,\
+could they separate me from thee, my life
+do Global.cam_switch_to_static(10)
+[wait time="1.0"]
+Townsfolk2: ¡MWhat forts or soldiers can not\
+cand do some decrepit clerics,\
+barely some skeletal beings,\
+that forbid our love, woe!
+do Global.cam_switch_to_static(9)
+[wait time="1.0"]
+Townsfolk: My love, please, fret not!\
+Thou knowest my duty exceeds me\
+without our rituals, the invisible threat\
+may doom our city!
+Townsfolk: One day this duty shall finish, \
+and we may together start anew,\
+in the meantime, I yearn the touch of your body;\
+¡take this rope and come up to my mindow!
+do Global.cam_switch_to_static(11)
+[wait time="3.0"]
+Veska: [portrait=serious](I believe something got lost in translation there...)
+Veska: [portrait=serious]Its so sad they can't be together because of their social status...
+set {npc_name2} = "Granny"
+Townsfolk2: What? Oh! Don't worry young lady, they do that every week.
+Veska: [portrait=shock]Every…?
+Townsfolk2: Yeah, they used to do that every night, but neighbours complained. Now they just do it once a week.
+Veska: [portrait=serious]Oh… I thought there was a world of differences between the theocratic elite and the common people.
+Townsfolk2: I mean, there are… but there is no law against it or anything. It's not common, but it happens sometimes.
+Veska: [portrait=serious]Hmm… And then why do they do all that?
+Townsfolk2: Don't you have anyone, young lady?
+Veska: [portrait=shock]AEh… Hmm… Well… I don't…
+Townsfolk2: Don't worry, you're still young. Some day you'll find how beautiful it is to find someone as weird as you.
+Veska: [portrait=simper]...
+do Dialogic.start_timeline("check_transition_TL")

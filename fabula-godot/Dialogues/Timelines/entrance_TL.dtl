@@ -1,6 +1,7 @@
 Veska: [portrait=invested]Ah... Verdaderamente una ciudad encantadora.[aa=3.0]
-Veska: [portrait=simper]Como dije, esta es una ciudad que existe en un mundo en el que tanto las flechas petrificadoras como las contramedidas para las flechas petrificadoras existen.[aa=3.0]
-Veska: [portrait=simper]La historia de esta ciudad, su fundación, está muy relacionada con esta potencial amenaza.[aa=3.0]
+Veska: [portrait=serious]Su nombre ya ni importa, no es como que exista otra ciudad en todo este mundo.[aa=3.0]
+Veska: [portrait=simper]Y su gente, pues han vivido desde tiempo ancestrales bajo el gobierno de una élite teocrática.[aa=7.0]
+Veska: [portrait=simper]Como dije, esta es una ciudad que existe en un mundo en el que tanto las flechas petrificadoras como las contramedidas para las flechas petrificadoras existen.[aa=7.0]
+Veska: [portrait=simper]Y es justo por esto que esta orden de magos-monjes que gobierna la ciudad vive en ella a cuerpo de rey.[aa=5.0]
 Veska: [portrait=invested]Sin embargo, a simple vista parece un lugar de lo más simplón.[aa=3.0]
-Veska: [portrait=simper]¡Sigamos y descubramos a su gente![aa=3.0]
 do Dialogic.start_timeline("check_transition_TL")

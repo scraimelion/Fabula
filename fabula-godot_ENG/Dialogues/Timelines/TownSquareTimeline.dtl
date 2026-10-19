@@ -1,0 +1,7 @@
+do Global.stop_movement()
+do Global.cam_switch_to_static(1)
+Veska: [portrait=simper]We've arrived at the town square.!
+Veska: [portrait=simper]The social core of the common people, where the threat under which the clergy reigns was forgotten years ago. 
+Veska: [portrait=simper]Both monks and believers now act more out of inertia than out of fear or conviction.
+Veska: [portrait=simper]They regard the rites that protect the city from the threats mentioned in the scriptures as mere tradition.
+do Dialogic.start_timeline("check_transition_TL")

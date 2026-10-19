@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://br4wd360u70kp"]
+
+[ext_resource type="Script" uid="uid://dlay16e5c2loo" path="res://Scripts/flecha_petrificadora.gd" id="1_kmmoq"]
+[ext_resource type="AudioStream" uid="uid://c6u1bc42ed3nr" path="res://Sound/Bow/shoot.mp3" id="2_yl1nu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yl1nu"]
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dcetu"]
+material = SubResource("StandardMaterial3D_yl1nu")
+
+[node name="FlechaPetrificadora" type="Node3D"]
+script = ExtResource("1_kmmoq")
+
+[node name="MeshContainer" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshContainer"]
+transform = Transform3D(0.19, 0, 0, 0, -3.9453614e-08, 0.19, 0, -0.90259343, -8.305164e-09, 0, 0, 0)
+mesh = SubResource("CylinderMesh_dcetu")
+skeleton = NodePath("../..")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -1)
+collide_with_areas = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_yl1nu")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

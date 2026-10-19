@@ -1,0 +1,18 @@
+do Global.stop_movement()
+do Global.cam_switch_to_static(18)
+set {npc_name2} = "Honest citizen"
+Townsfolk2: Hey there, want some kandy?
+Veska: [portrait=simper]No thanks, I don't really feel like right now.
+Townsfolk2: Well, more for me.
+Veska: [portrait=serious] Why do you do that?
+Townsfolk2: Huh?
+Veska: [portrait=frown]The wrapping, on't you know it's wrong to throw it on the ground?
+set {npc_name2} = "Wanted criminal"
+Townsfolk2: Ah!
+Townsfolk2: Uhmm…
+Townsfolk2: Well, have you seen a trash can around here??
+Veska: [portrait=serious]Not really, no…
+set {npc_name2} = "Wanted criminal with reasonable motivation"
+Townsfolk2: There isn't a single one in the entire city. It’s not my fault they don’t know how to do urban planning.
+Veska: [portrait=simper]I guess that's true…
+do Dialogic.start_timeline("check_transition_TL")

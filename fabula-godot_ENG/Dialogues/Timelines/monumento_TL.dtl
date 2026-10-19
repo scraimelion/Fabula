@@ -1,0 +1,12 @@
+do Global.cam_switch_to_static(19)
+do Global.stop_movement()
+Veska: [portrait=serious]Hmm... An important person, for sure...
+Veska: [portrait=shock]It says here that he is the founding father of the church!
+Veska: [portrait=simper]Let's see what else is here...
+Veska: [portrait=frown]The plaque is so neglected that it is barely legible... It seems as if no one cares to remember what this person did.
+Veska: [portrait=simper]"The Most Holy Father, who, along with his faith, brought us protection from the threat looming over this sacred land."
+Veska: [portrait=simper]Indeed... Over time, it seems the origins of the entire religious order have been somewhat forgotten.
+Veska: [portrait=serious]Both monks and believers now act more out of inertia than out of fear or conviction.
+Veska: [portrait=serious]They regard the rites that protect the city from the threats mentioned in the scriptures as mere tradition.
+Veska: [portrait=simper]I can't blame them for anything, either, it's only natural as time goes by...
+do Dialogic.start_timeline("check_transition_TL")

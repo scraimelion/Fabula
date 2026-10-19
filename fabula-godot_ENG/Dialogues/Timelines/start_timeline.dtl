@@ -1,0 +1,19 @@
+do Global.stop_movement()
+do Global.change_chara()
+Veska: [portrait=shock]!!!
+Veska: [portrait=simper]Hello there!
+Veska: [portrait=simper]I didn't expect to see you around here.
+Veska: [portrait=serious]Apparently, the idea of ​​just shooting at the cloud didn't convince you...
+Veska: [portrait=simper]I’m not saying you had to. But I find it amusing that you ended up here.
+Veska: [portrait=serious]Especially if you didn't really know there was anything beyond shooting the arrow...
+Veska: [portrait=simper]But anyway, here you are! You've decided not to fulfill your role of destroying the city again.
+Veska: [portrait=simper]Since you've decided you want to see more of this place, let me be your guide.
+Veska: [portrait=simper]There is a whole world in there, a whole community and a whole history, that goes beyond the external perspective we had offered you until now.
+Veska: [portrait=simper]And it all stems from a simple idea.
+Veska: [portrait=simper]"If arrows that turn clouds to stone exist, then spells capable of countering the threats posed by the city's enemies can also exist."
+Veska: [portrait=simper]Until now, you had assumed the role of the archer, the destroyer, never able to see beyond the moment the cloud descends upon the city.
+do Global.start_movement()
+Veska: [portrait=invested]But enough talk. Let's go discover this city and its people!
+Veska: [portrait=simper]We can move using WASD and control the camera with the mouse![aa=2.0]
+[wait time="6.0"]
+Veska: [portrait=invested]I think the entrance to the city is to the right...[aa=2.0]
